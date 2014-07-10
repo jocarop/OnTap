@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>spot_id</key>
+		<integer>1</integer>
+		<key>nombre</key>
+		<string>Alfreditos</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Guillermo Prieto 22 Entre Blvd. Morelos y Gomez Farias, Col. Pitic.</string>
+		<key>telefono</key>
+		<string>6622103514</string>
+		<key>imagen</key>
+		<string>alfreditos.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>2</integer>
+		<key>nombre</key>
+		<string>Bermejo</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Blvd. Kino 177, Col. 5 de Mayo.</string>
+		<key>telefono</key>
+		<string>6622152086</string>
+		<key>imagen</key>
+		<string>bermejo.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>3</integer>
+		<key>nombre</key>
+		<string>Casa Grande</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Blvd. Kino 902, Col. Pitic. </string>
+		<key>telefono</key>
+		<string>6622164205</string>
+		<key>imagen</key>
+		<string>casagrande.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>4</integer>
+		<key>nombre</key>
+		<string>Cayomango</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 856, Plaza Epic, Col. Versalles</string>
+		<key>telefono</key>
+		<string>6621189899</string>
+		<key>imagen</key>
+		<string>cayomango.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>5</integer>
+		<key>nombre</key>
+		<string>Calafate</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Lago del Cisne 205, Fraccionamiento Los Lagos</string>
+		<key>telefono</key>
+		<string>6622608867</string>
+		<key>imagen</key>
+		<string>calafate.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>6</integer>
+		<key>nombre</key>
+		<string>El Che</string>
+		<key>tipo</key>
+		<string>Argentina</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 311, Col. Raquet Club</string>
+		<key>telefono</key>
+		<string>6622600007</string>
+		<key>imagen</key>
+		<string>el_che.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>7</integer>
+		<key>nombre</key>
+		<string>El Escalon</string>
+		<key>tipo</key>
+		<string>Italiana</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete esquina Paseo las Quintas, Plaza Paseo 111, Col. Santa Fé</string>
+		<key>telefono</key>
+		<string>6622167100</string>
+		<key>imagen</key>
+		<string>el_escalon.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>8</integer>
+		<key>nombre</key>
+		<string>Holy Cow</string>
+		<key>tipo</key>
+		<string>Hamburgesas</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 144, Col. Valle Grande</string>
+		<key>telefono</key>
+		<string>6623019620</string>
+		<key>imagen</key>
+		<string>holy_cow.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>9</integer>
+		<key>nombre</key>
+		<string>La Bartuka</string>
+		<key>tipo</key>
+		<string>Hamburgesas</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 377 esquina Paseo las Quintas, Plaza Paseo 111, Col. Santa Fé</string>
+		<key>telefono</key>
+		<string>6623120391</string>
+		<key>imagen</key>
+		<string>la_bartuka.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>10</integer>
+		<key>nombre</key>
+		<string>La Piola</string>
+		<key>tipo</key>
+		<string>Italiana</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 803, Plaza Cantabria, La Rioja Residencial</string>
+		<key>telefono</key>
+		<string>6623024000</string>
+		<key>imagen</key>
+		<string>la_piola.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>11</integer>
+		<key>nombre</key>
+		<string>Mochomos</string>
+		<key>tipo</key>
+		<string>Regional</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 701, Plaza Graciela</string>
+		<key>telefono</key>
+		<string>6622112177</string>
+		<key>imagen</key>
+		<string>mochomos2.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>12</integer>
+		<key>nombre</key>
+		<string>Thai</string>
+		<key>tipo</key>
+		<string>Oriental</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 490 esquina Jose Lopez Portillo</string>
+		<key>telefono</key>
+		<string>6622110877</string>
+		<key>imagen</key>
+		<string>thai2.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>13</integer>
+		<key>nombre</key>
+		<string>La Malinche</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Blvd. Kino esquina 20 de Noviembre, Col. Country Club</string>
+		<key>telefono</key>
+		<string>6622101985</string>
+		<key>imagen</key>
+		<string>malinche3.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>14</integer>
+		<key>nombre</key>
+		<string>El Costeñito</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 240, Plaza Dila</string>
+		<key>telefono</key>
+		<string>6623019237</string>
+		<key>imagen</key>
+		<string>costenito.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>15</integer>
+		<key>nombre</key>
+		<string>Jhonny Sailor</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 312 casi esquina con Sahuaripa, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6623117233</string>
+		<key>imagen</key>
+		<string>jhonny2.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>16</integer>
+		<key>nombre</key>
+		<string>Overtime</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio #386</string>
+		<key>telefono</key>
+		<string>6622629220</string>
+		<key>imagen</key>
+		<string>overtime.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>17</integer>
+		<key>nombre</key>
+		<string>University</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Cultura 55, Galerias Mall Sonora, Col. Proyecto Río Sonora</string>
+		<key>telefono</key>
+		<string>6622123496</string>
+		<key>imagen</key>
+		<string>university.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>18</integer>
+		<key>nombre</key>
+		<string>Cabo Grill</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 803, Plaza Cantrabria, La Rioja Residencial</string>
+		<key>telefono</key>
+		<string>6622648080</string>
+		<key>imagen</key>
+		<string>cabo_grill.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>19</integer>
+		<key>nombre</key>
+		<string>Reforma 255</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Reforma 255, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622125500</string>
+		<key>imagen</key>
+		<string>reforma.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>20</integer>
+		<key>nombre</key>
+		<string>El Marcos</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Blvd. Rodriguez s/n, entre Nayarit y Matamoros</string>
+		<key>telefono</key>
+		<string>6622154710</string>
+		<key>imagen</key>
+		<string>el_marcos3.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>21</integer>
+		<key>nombre</key>
+		<string>Machacas</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Kino 183, Col. Country Club</string>
+		<key>telefono</key>
+		<string>6622144216</string>
+		<key>imagen</key>
+		<string>machacas.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>22</integer>
+		<key>nombre</key>
+		<string>The Game</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 261, Col. Satelite.</string>
+		<key>telefono</key>
+		<string>6622162868</string>
+		<key>imagen</key>
+		<string>the_game.png</string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>23</integer>
+		<key>nombre</key>
+		<string>Chalet de la Guitarra</string>
+		<key>tipo</key>
+		<string>Italiana</string>
+		<key>direccion</key>
+		<string>Villareal #80, Col. Country Club (junto a la Torre de Hermosillo)</string>
+		<key>telefono</key>
+		<string>6622149141</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>24</integer>
+		<key>nombre</key>
+		<string>Alma Mia</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Comonfort esquina con Dr. Hoffer y Tehuantepec, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622121990</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>25</integer>
+		<key>nombre</key>
+		<string>Antojeria El Centro</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio y Blvd. Solidaridad, Edificio Cinemark, Local 8</string>
+		<key>telefono</key>
+		<string>6622605060</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>26</integer>
+		<key>nombre</key>
+		<string>Bistro</string>
+		<key>tipo</key>
+		<string>Francesa</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 154-F, Plaza Valles, Col. Valle Grande</string>
+		<key>telefono</key>
+		<string>6622604033</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>27</integer>
+		<key>nombre</key>
+		<string>Bonifacio&apos;s</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Luis D. Colosio esquina Yañez 125, Col. Centro</string>
+		<key>telefono</key>
+		<string>6622121040</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>28</integer>
+		<key>nombre</key>
+		<string>Chiltepino&apos;s</string>
+		<key>tipo</key>
+		<string>Wings</string>
+		<key>direccion</key>
+		<string>Juarez 47, entre Veracruz y Tamaulipas, Col. Centro</string>
+		<key>telefono</key>
+		<string>662145658</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>29</integer>
+		<key>nombre</key>
+		<string>City Salads</string>
+		<key>tipo</key>
+		<string>Naturista</string>
+		<key>direccion</key>
+		<string></string>
+		<key>telefono</key>
+		<string>6622648899</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>30</integer>
+		<key>nombre</key>
+		<string>Comicx</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 307, Frente a Hospital San Jose</string>
+		<key>telefono</key>
+		<string>6622121084</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>31</integer>
+		<key>nombre</key>
+		<string>El Cafe 57</string>
+		<key>tipo</key>
+		<string>Naturista</string>
+		<key>direccion</key>
+		<string>Blvd. Gomez Farias 200 esquina Rafael Campoy, Col. Pitic</string>
+		<key>telefono</key>
+		<string>6622144674</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>32</integer>
+		<key>nombre</key>
+		<string>El Farallon</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 307, Frente a Hospital San Jose</string>
+		<key>telefono</key>
+		<string>6622678800</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>33</integer>
+		<key>nombre</key>
+		<string>El Fogoncito</string>
+		<key>tipo</key>
+		<string>Tacos</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 433, Col. Los Sabinos</string>
+		<key>telefono</key>
+		<string>6622111380</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>34</integer>
+		<key>nombre</key>
+		<string>El Leñador</string>
+		<key>tipo</key>
+		<string>Tacos</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 168, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622135033</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>35</integer>
+		<key>nombre</key>
+		<string>El Siciliano</string>
+		<key>tipo</key>
+		<string>Italiana</string>
+		<key>direccion</key>
+		<string>Blvd. Rodriguez 95, Col. Centro</string>
+		<key>telefono</key>
+		<string>6622171171</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>36</integer>
+		<key>nombre</key>
+		<string>Esta Cabral</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Callejon Velazco y Allende, Centro Historico</string>
+		<key>telefono</key>
+		<string>6622137474</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>37</integer>
+		<key>nombre</key>
+		<string>Girasole</string>
+		<key>tipo</key>
+		<string>Italiana</string>
+		<key>direccion</key>
+		<string>Revolucion 33 esquina con Zacatecas, Col. Centro</string>
+		<key>telefono</key>
+		<string>6622147722</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>38</integer>
+		<key>nombre</key>
+		<string>Guavas</string>
+		<key>tipo</key>
+		<string>Naturista</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 658</string>
+		<key>telefono</key>
+		<string>6622111108</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>39</integer>
+		<key>nombre</key>
+		<string>Honolulu Wings</string>
+		<key>tipo</key>
+		<string>Wings</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 14-4 esquina con Ignacio Vallarta, Col. Constitucion</string>
+		<key>telefono</key>
+		<string>6622106048</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>40</integer>
+		<key>nombre</key>
+		<string>Ihop</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 424, Col. Colinas</string>
+		<key>telefono</key>
+		<string>6622678881</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>41</integer>
+		<key>nombre</key>
+		<string>La Cobacha</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Solidaridad y Olmos, Col. Las Granjas</string>
+		<key>telefono</key>
+		<string>6622123808</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>42</integer>
+		<key>nombre</key>
+		<string>La Siesta</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Blvd. Kino 185 y Primero de Mayo, Col. Country Club</string>
+		<key>telefono</key>
+		<string>6622891950</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>43</integer>
+		<key>nombre</key>
+		<string>La Zarzuela</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Blvd. Garcia Morales 306, Col. El Llano (Hotel Royal Palace)</string>
+		<key>telefono</key>
+		<string>6622363336</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>44</integer>
+		<key>nombre</key>
+		<string>Las Herraduras</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos esquina con Alfredo Eguiarte</string>
+		<key>telefono</key>
+		<string>6622100101</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>45</integer>
+		<key>nombre</key>
+		<string>Mariachisimo</string>
+		<key>tipo</key>
+		<string>Regional</string>
+		<key>direccion</key>
+		<string>Blvd. Solidaridad 325, Col. Palmar del Sol</string>
+		<key>telefono</key>
+		<string>6622183555</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>46</integer>
+		<key>nombre</key>
+		<string>Los Arbolitos de Cajeme</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos #815 junto a Bol 300</string>
+		<key>telefono</key>
+		<string>6622071181</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>46</integer>
+		<key>nombre</key>
+		<string>La Cura</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Dr. Paliza 51 esquina con Londres, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622121577</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>47</integer>
+		<key>nombre</key>
+		<string>Market</string>
+		<key>tipo</key>
+		<string>Naturista</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 377 esquina Paseo las Quintas, Plaza Paseo 111, Col. Santa Fé</string>
+		<key>telefono</key>
+		<string>6622200020</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>48</integer>
+		<key>nombre</key>
+		<string>Mediterraneos</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Centenario Sur 77, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622170105</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>49</integer>
+		<key>nombre</key>
+		<string>Orange Mill</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 312 esquina con Sahuaripa, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622629266</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>50</integer>
+		<key>nombre</key>
+		<string>Palominos</string>
+		<key>tipo</key>
+		<string>Regional</string>
+		<key>direccion</key>
+		<string>Paseo Rio Sonora 72-214, Col.Villa de Seris</string>
+		<key>telefono</key>
+		<string>6622122700</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>51</integer>
+		<key>nombre</key>
+		<string>Phocas</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Veracruz entre Reforma y Guadalupe Victoria, Col. San Benito</string>
+		<key>telefono</key>
+		<string>6622104050</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>52</integer>
+		<key>nombre</key>
+		<string>Pistones</string>
+		<key>tipo</key>
+		<string>Hamburgesas</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 803, Plaza Cantabria, La Rioja Residencial</string>
+		<key>telefono</key>
+		<string>6622120997</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>53</integer>
+		<key>nombre</key>
+		<string>Santo&apos;s Grill</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Gaston Madrid casi esquina con Garmendia, Col. Centro</string>
+		<key>telefono</key>
+		<string>6622133103</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>54</integer>
+		<key>nombre</key>
+		<string>Sapo&apos;s</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Rodriguez 89</string>
+		<key>telefono</key>
+		<string>6622120767</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>55</integer>
+		<key>nombre</key>
+		<string>Sonora Steak</string>
+		<key>tipo</key>
+		<string>Regional</string>
+		<key>direccion</key>
+		<string>Blvd. Kino 914</string>
+		<key>telefono</key>
+		<string>6622100313</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>56</integer>
+		<key>nombre</key>
+		<string>Stromboli</string>
+		<key>tipo</key>
+		<string>Italiana</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 695, Col. Loreto</string>
+		<key>telefono</key>
+		<string>6622111021</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>57</integer>
+		<key>nombre</key>
+		<string>Swiss Haus</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Dr. Paliza 62 esquina con Campodonico, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622175040</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>58</integer>
+		<key>nombre</key>
+		<string>Tabu Sushi</string>
+		<key>tipo</key>
+		<string>Japonesa</string>
+		<key>direccion</key>
+		<string>Navarrete 172, Plaza Valles, Col. Valle Grande</string>
+		<key>telefono</key>
+		<string>6622161270</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>59</integer>
+		<key>nombre</key>
+		<string>Tacos Jass Light</string>
+		<key>tipo</key>
+		<string>Tacos</string>
+		<key>direccion</key>
+		<string>Blvd. Gomez Farias esquina con I. Mariscal, Col. Constitucion</string>
+		<key>telefono</key>
+		<string>6622100137</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>60</integer>
+		<key>nombre</key>
+		<string>Tik Tok</string>
+		<key>tipo</key>
+		<string>Hamburgesas</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 89, Col. Constitucion</string>
+		<key>telefono</key>
+		<string>6622670001</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>61</integer>
+		<key>nombre</key>
+		<string>Verde Olivo</string>
+		<key>tipo</key>
+		<string>Naturista</string>
+		<key>direccion</key>
+		<string>Niños Heroes 75, Col. Centro</string>
+		<key>telefono</key>
+		<string>6622132881</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>62</integer>
+		<key>nombre</key>
+		<string>Willy Fish House</string>
+		<key>tipo</key>
+		<string>Mariscos</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos esq. con Benito Quintana 15, Col. Constitucion</string>
+		<key>telefono</key>
+		<string>6622143000</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>63</integer>
+		<key>nombre</key>
+		<string>Yashima</string>
+		<key>tipo</key>
+		<string>Japonesa</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 755, Plaza Laura</string>
+		<key>telefono</key>
+		<string>6622847667</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>64</integer>
+		<key>nombre</key>
+		<string>Zasshi</string>
+		<key>tipo</key>
+		<string>Japonesa</string>
+		<key>direccion</key>
+		<string>Blvd. San Bernardino No.88</string>
+		<key>telefono</key>
+		<string>6621510392</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>65</integer>
+		<key>nombre</key>
+		<string>Hooligans</string>
+		<key>tipo</key>
+		<string>Hamburgesas</string>
+		<key>direccion</key>
+		<string>Blvd. Kino esquina con Herminio Ciscomani, Col. Pitic</string>
+		<key>telefono</key>
+		<string>6622033282</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>66</integer>
+		<key>nombre</key>
+		<string>Xi Wei</string>
+		<key>tipo</key>
+		<string>Oriental</string>
+		<key>direccion</key>
+		<string>Jose S. Healy 313 B esquina con Monteverde, Col. San Benito</string>
+		<key>telefono</key>
+		<string>6623028821</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>67</integer>
+		<key>nombre</key>
+		<string>Ponderosa</string>
+		<key>tipo</key>
+		<string>Pizzas</string>
+		<key>direccion</key>
+		<string>Yañez esquina con Michoacan, Col. San Benito</string>
+		<key>telefono</key>
+		<string>6622140024</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>68</integer>
+		<key>nombre</key>
+		<string>Sushi Saga</string>
+		<key>tipo</key>
+		<string>Japonesa</string>
+		<key>direccion</key>
+		<string>Blvd. Gomez Farias entre Rafael Campoy y Garcia Conde, Col. Pitic</string>
+		<key>telefono</key>
+		<string>6622106012</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>69</integer>
+		<key>nombre</key>
+		<string>KeBurros Percherones</string>
+		<key>tipo</key>
+		<string>Tacos</string>
+		<key>direccion</key>
+		<string>Blvd. Colosio 413, Col. Villa Satelite</string>
+		<key>telefono</key>
+		<string>6622181718</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>70</integer>
+		<key>nombre</key>
+		<string>Calabera</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Kino 353, Col. Pitic</string>
+		<key>telefono</key>
+		<string>6623215701</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>71</integer>
+		<key>nombre</key>
+		<string>Inari Sushi</string>
+		<key>tipo</key>
+		<string>Japonesa</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 307, Frente a Hospital San Jose</string>
+		<key>telefono</key>
+		<string>6622678867</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>72</integer>
+		<key>nombre</key>
+		<string>El Andaluz</string>
+		<key>tipo</key>
+		<string>Española</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 755, Plaza Laura, Local B</string>
+		<key>telefono</key>
+		<string>6621720084</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>73</integer>
+		<key>nombre</key>
+		<string>Miyako</string>
+		<key>tipo</key>
+		<string>Japonesa</string>
+		<key>direccion</key>
+		<string>Blvd. Luis Encinas</string>
+		<key>telefono</key>
+		<string></string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>74</integer>
+		<key>nombre</key>
+		<string>El Patio</string>
+		<key>tipo</key>
+		<string>Neveria y Antojos</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos 726, Plaza Siete</string>
+		<key>telefono</key>
+		<string>662847343</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>75</integer>
+		<key>nombre</key>
+		<string>Make</string>
+		<key>tipo</key>
+		<string>Neveria y Antojos</string>
+		<key>direccion</key>
+		<string>Blvd. Morelos esquina con Juan de Dios Arias, Col. Constitucion</string>
+		<key>telefono</key>
+		<string>6622670832</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>76</integer>
+		<key>nombre</key>
+		<string>Burros InHot</string>
+		<key>tipo</key>
+		<string>Tacos</string>
+		<key>direccion</key>
+		<string>Juarez 439, entre Avenida 10 y Avenida 13, Col. Sacramento</string>
+		<key>telefono</key>
+		<string>6622112040</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>77</integer>
+		<key>nombre</key>
+		<string>Yeye Jazz and Sushi</string>
+		<key>tipo</key>
+		<string>Japonesa</string>
+		<key>direccion</key>
+		<string>Blvd. Quiroga 142, entre Garcia Morales y Blvd. Colosio, Colonia Real del Quiroga</string>
+		<key>telefono</key>
+		<string>6623100808</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>78</integer>
+		<key>nombre</key>
+		<string>J-R Ribs Costilleria</string>
+		<key>tipo</key>
+		<string>Barbeque</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 172, Plaza Valles, Col. Valle Grande</string>
+		<key>telefono</key>
+		<string>6622165036</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>79</integer>
+		<key>nombre</key>
+		<string>La Huesuda</string>
+		<key>tipo</key>
+		<string>Barbeque</string>
+		<key>direccion</key>
+		<string>Reforma 221, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622126969</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>80</integer>
+		<key>nombre</key>
+		<string>Las Chulas</string>
+		<key>tipo</key>
+		<string>Mexicana</string>
+		<key>direccion</key>
+		<string>Blvd. Solidaridad 56, Plaza Girasol, Col. El Sahuaro</string>
+		<key>telefono</key>
+		<string>6622629630</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>81</integer>
+		<key>nombre</key>
+		<string>Los Magos</string>
+		<key>tipo</key>
+		<string>Regional</string>
+		<key>direccion</key>
+		<string>Gaston Madrid 32 esquina Guerrero, Colonia Centro</string>
+		<key>telefono</key>
+		<string>6622139199</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>82</integer>
+		<key>nombre</key>
+		<string>Vizietto</string>
+		<key>tipo</key>
+		<string>Italiana</string>
+		<key>direccion</key>
+		<string>San Bernardino 87-B, Plaza Bely.</string>
+		<key>telefono</key>
+		<string>6623122182</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>83</integer>
+		<key>nombre</key>
+		<string>Keko&apos;s</string>
+		<key>tipo</key>
+		<string>Wings</string>
+		<key>direccion</key>
+		<string>Leon Guzman entre Blvd. Gomez Farias y Blvd. Morelos, Col. Constitucion</string>
+		<key>telefono</key>
+		<string>6622080208</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>84</integer>
+		<key>nombre</key>
+		<string>Necios</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Blvd. Rodriguez casi esquina con Juarez</string>
+		<key>telefono</key>
+		<string>6622240670</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>85</integer>
+		<key>nombre</key>
+		<string>Pinchos</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Hidalgo y Marsella 62, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6622126262</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>86</integer>
+		<key>nombre</key>
+		<string>El Rincon de Bicente</string>
+		<key>tipo</key>
+		<string>Restaurant Bar</string>
+		<key>direccion</key>
+		<string>Comonfort 50, Plaza Bicentenario, Col. Centenario</string>
+		<key>telefono</key>
+		<string>6623028744</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>87</integer>
+		<key>nombre</key>
+		<string>Tepikas</string>
+		<key>tipo</key>
+		<string>Wings</string>
+		<key>direccion</key>
+		<string>Blvd. Navarrete 172, Plaza Valles, Col. Valle Grande</string>
+		<key>telefono</key>
+		<string>6623115858</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>88</integer>
+		<key>nombre</key>
+		<string>Vodeli</string>
+		<key>tipo</key>
+		<string>Internacional</string>
+		<key>direccion</key>
+		<string>Blvd. Rodriguez y Pino Suarez 43, Col. Centro</string>
+		<key>telefono</key>
+		<string>6622126161</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>89</integer>
+		<key>nombre</key>
+		<string>Mandarin</string>
+		<key>tipo</key>
+		<string>China</string>
+		<key>direccion</key>
+		<string>Blvd. Solidaridad 130, Col. Raquet Club</string>
+		<key>telefono</key>
+		<string>6622188885</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>spot_id</key>
+		<integer>90</integer>
+		<key>nombre</key>
+		<string>Chino Angel</string>
+		<key>tipo</key>
+		<string>China</string>
+		<key>direccion</key>
+		<string>Blvd. Solidaridad 56, Plaza Girasol, Col. El Sahuaro</string>
+		<key>telefono</key>
+		<string>6622188885</string>
+		<key>imagen</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
