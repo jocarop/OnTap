@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad
 {
-    if (_detailItem.tieneSucursales)
+    if (_detailItem.tieneSucursales && [_detailItem.sucursales count] == 0)
     {
         MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"Cargando datos";
