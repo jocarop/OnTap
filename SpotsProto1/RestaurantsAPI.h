@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Restaurant.h"
 
 @protocol RestaurantsListDelegate <NSObject>
 - (void) refreshFavoritesList;
@@ -29,5 +30,7 @@
 - (NSMutableArray*)getFavoriteRestaurants;
 - (void)removeFavoriteRestaurant:(NSInteger)index;
 - (void)addFavoriteRestaurant:(NSString*)objectId;
+- (void)getRestaurantDetails:(Restaurant*)restaurant;
+- (void)addRestaurant;
 
 @end

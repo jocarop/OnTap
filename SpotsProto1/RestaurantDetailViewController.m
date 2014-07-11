@@ -9,8 +9,13 @@
 #import "RestaurantDetailViewController.h"
 #import "Mixpanel.h"
 #import "RestaurantsAPI.h"
+#import "MBProgressHUD.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation RestaurantDetailViewController
+{
+    //IBOutlet UIButton* favoritesBtn;
+}
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -20,6 +25,29 @@
     }
 }
 
+- (void)viewDidLoad
+{
+    if (_detailItem.tieneSucursales)
+    {
+        MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"Cargando datos";
+        
+        dispatch_queue_t downloadQueue = dispatch_queue_create("loadDetails", NULL);
+        dispatch_async(downloadQueue, ^{
+        
+            [[RestaurantsAPI sharedInstance] getRestaurantDetails:_detailItem];
+        
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+        
+        });
+    }
+
+    [super viewDidLoad];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -27,14 +55,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    if (_detailItem.tieneSucursales)
+    {
+        return [_detailItem.sucursales count];
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headerView;
-
-    headerView = [[UIView alloc] init];
+    UIView *headerView = [[UIView alloc] init];
 
     CGFloat width = self.view.frame.size.width;
     CGFloat margin = 10.0f;
@@ -76,20 +109,61 @@
         return 164.0f;
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView* footerView = [[UIView alloc] init];
+    
+    CGFloat width = self.view.frame.size.width;
+    
+    UIButton* favoritesBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [favoritesBtn setFrame:CGRectMake(9, 10, width - 18, 44)];
+    [favoritesBtn setTitle:@"Agregar a Favoritos" forState:UIControlStateNormal];
+    [favoritesBtn setBackgroundColor:[UIColor whiteColor]];
+    favoritesBtn.reversesTitleShadowWhenHighlighted = YES;
+
+    [favoritesBtn addTarget: self action: @selector(addToFavorites:)
+     forControlEvents: UIControlEventTouchDown];
+    
+    favoritesBtn.layer.borderColor = [self.tableView separatorColor].CGColor;
+    favoritesBtn.layer.borderWidth = 0.5;
+    
+    UILabel* onTapLink = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, width, 44)];
+    onTapLink.text = @"wwww.ontap.com.mx";
+    onTapLink.font = [UIFont fontWithName:@"System" size:15.0];
+    onTapLink.textColor = [UIColor lightGrayColor];
+    onTapLink.textAlignment = NSTextAlignmentCenter;
+    onTapLink.backgroundColor = [UIColor clearColor];
+    
+    [footerView addSubview:favoritesBtn];
+    [footerView addSubview:onTapLink];
+
+    return footerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 100;
+}
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell;
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    if (indexPath.row == 0)
+    NSString* text = @"Telefono";
+    NSString* detail = _detailItem.telefono;
+    
+    if (_detailItem.tieneSucursales)
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-        
-        cell.textLabel.text = @"Telefono";
-        NSString* phoneNumber = [NSString stringWithFormat:@"(%@) %@-%@", [_detailItem.telefono substringWithRange:NSMakeRange(0, 3)], [_detailItem.telefono substringWithRange:NSMakeRange(3, 3)], [_detailItem.telefono substringWithRange:NSMakeRange(6, 4)]];
-        cell.detailTextLabel.text = phoneNumber;
+        text = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"sucursal"];
+        detail = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"telefono"];
     }
     
-    else if (indexPath.row == 1)
+    NSString* formattedPhoneNumber = [NSString stringWithFormat:@"(%@) %@-%@", [detail substringWithRange:NSMakeRange(0, 3)], [detail substringWithRange:NSMakeRange(3, 3)], [detail substringWithRange:NSMakeRange(6, 4)]];
+    
+    cell.textLabel.text = text;
+    cell.detailTextLabel.text = formattedPhoneNumber;
+    
+    /*else if (indexPath.row == 1)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         
@@ -97,20 +171,12 @@
         cell.detailTextLabel.text = _detailItem.direccion;
         cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.detailTextLabel.numberOfLines = 5;
-    }
-    
-    else
-    {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Button" forIndexPath:indexPath];
-        cell.textLabel.text = @"Agregar a Favoritos";
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        cell.textLabel.textColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
-    }
+    }*/
     
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_detailItem.direccion != nil && indexPath.row == 1)
     {
@@ -132,7 +198,7 @@
     
     return tableView.rowHeight;
     
-}
+}*/
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -141,25 +207,35 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0)
+    NSString* telefono = _detailItem.telefono;
+    if (_detailItem.tieneSucursales)
     {
-        Mixpanel* mixpanel = [Mixpanel sharedInstance];
-        [mixpanel track:@"Llamada" properties:@{
-                                                      @"id": _detailItem.objectId,
-                                                      @"nombre": _detailItem.nombre
-                                                      }];
-        
-        NSString *dialThis = [NSString stringWithFormat:@"tel:%@", _detailItem.telefono];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:dialThis]];
+        telefono = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"telefono"];
     }
     
-    if (indexPath.row == 2)
+    NSString* sucursal = @"";
+    if (_detailItem.tieneSucursales)
     {
-        RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
-        [api addFavoriteRestaurant:_detailItem.objectId];
+        sucursal = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"sucursal"];
     }
+    
+    Mixpanel* mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Llamada" properties:@{
+                                            @"id": _detailItem.objectId,
+                                            @"nombre": _detailItem.nombre,
+                                            @"sucursal": sucursal
+                                        }];
+        
+    NSString *dialThis = [NSString stringWithFormat:@"tel:%@", telefono];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:dialThis]];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (IBAction)addToFavorites:(id)sender
+{
+    RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
+    [api addFavoriteRestaurant:_detailItem.objectId];
 }
 
 @end

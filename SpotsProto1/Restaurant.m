@@ -16,6 +16,7 @@
 @synthesize direccion = _direccion;
 @synthesize tipo = _tipo;
 @synthesize imagen = _imagen;
+@synthesize sucursales = _sucursales;
 
 - (id)initFromParseObject:(PFObject *)object
 {
@@ -43,9 +44,16 @@
         self.objectId = object.objectId;
         self.nombre = object[@"nombre"];
         self.tipo = object[@"tipo"];
+        self.telefono = object[@"telefono"];
+        self.tieneSucursales = [object[@"tieneSucursales"] boolValue];
     }
     
     return self;
+}
+
+- (void)setTelefonos:(NSMutableArray *)telefonos
+{
+    self.telefono = [telefonos firstObject];
 }
 
 @end

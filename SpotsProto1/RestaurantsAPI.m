@@ -26,6 +26,29 @@
 
 @synthesize delegate;
 
+- (void)addRestaurant
+{
+    PFObject *gameScore = [PFObject objectWithClassName:@"Restaurant"];
+    gameScore[@"nombre"] = @"KeBurros";
+    gameScore[@"tipo"] = @"Tacos";
+    gameScore[@"ciudad"] = @"Hermosillo";
+    gameScore[@"tieneSucursales"] = @YES;
+    
+    NSDictionary *dictionary1 = @{@"sucursal": @"Pitic",
+                                 @"telefono": @"662143869"};
+    
+    NSDictionary *dictionary2 = @{@"sucursal": @"Morelos",
+                                 @"telefono": @"662146394"};
+    
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    [array addObject:dictionary1];
+    [array addObject:dictionary2];
+    
+    gameScore[@"sucursales"] = array;
+    
+    [gameScore saveInBackground];
+}
+
 + (RestaurantsAPI*)sharedInstance
 {
     static RestaurantsAPI* _sharedInstance = nil;
@@ -46,6 +69,7 @@
     restaurants = [NSMutableArray array];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query selectKeys:@[@"nombre", @"tipo", @"telefono", @"tieneSucursales"]];
     [query whereKey:@"ciudad" equalTo:ciudad];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
 
@@ -56,7 +80,7 @@
     
     for (PFObject* object in restaurantArray)
     {
-        Restaurant* rest = [[Restaurant alloc] initFromParseObject:object];
+        Restaurant* rest = [[Restaurant alloc] initWithPFObject:object];
         [restaurants addObject:rest];
     }
              
@@ -120,6 +144,15 @@
 - (NSArray*)getTypeKeys
 {
     return typeKeys;
+}
+
+- (void)getRestaurantDetails:(Restaurant*)restaurant
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query selectKeys:@[@"sucursales"]];
+    PFObject* object = [query getObjectWithId:restaurant.objectId];
+    
+    restaurant.sucursales = object[@"sucursales"];
 }
 
 - (void)loadFavoriteRestaurants
@@ -198,17 +231,6 @@
 {
     Restaurant* restaurant;
     NSPredicate* pred = [NSPredicate predicateWithFormat:@"(objectId = %@)", objectId];
-    
-    /*NSArray* allRestaurants = [restaurantsAlphabetically allValues];
-    for (NSArray* items in allRestaurants)
-    {
-        NSArray* results = [items filteredArrayUsingPredicate:pred];
-        if (results.count > 0)
-        {
-            restaurant = [results objectAtIndex:0];
-            break;
-        }
-    }*/
     
     NSArray* results = [restaurants filteredArrayUsingPredicate:pred];
     if (results.count > 0)
