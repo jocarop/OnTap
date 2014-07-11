@@ -102,6 +102,8 @@
         NSArray* restaurantsBySection = [[[RestaurantsAPI sharedInstance] getRestaurantsByType] objectForKey:sectionKey];
         
         Restaurant* restaurant =[restaurantsBySection objectAtIndex:indexPath.row];
+        
+        [[segue destinationViewController] setParentView:@"Por Tipo"];
         [[segue destinationViewController] setDetailItem:restaurant];
     }
 }

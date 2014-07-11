@@ -14,8 +14,9 @@
 
 @implementation RestaurantDetailViewController
 {
-    //IBOutlet UIButton* favoritesBtn;
 }
+
+@synthesize parentView;
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -223,7 +224,8 @@
     [mixpanel track:@"Llamada" properties:@{
                                             @"id": _detailItem.objectId,
                                             @"nombre": _detailItem.nombre,
-                                            @"sucursal": sucursal
+                                            @"sucursal": sucursal,
+                                            @"vista": parentView
                                         }];
         
     NSString *dialThis = [NSString stringWithFormat:@"tel:%@", telefono];

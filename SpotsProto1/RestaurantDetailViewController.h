@@ -12,5 +12,6 @@
 @interface RestaurantDetailViewController : UITableViewController
 
 @property (strong, nonatomic) Restaurant* detailItem;
+@property (strong, nonatomic) NSString* parentView;
 
 @end

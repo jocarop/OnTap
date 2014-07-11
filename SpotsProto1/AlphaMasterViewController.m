@@ -142,6 +142,7 @@
             restaurant = [restaurantsBySection objectAtIndex:indexPath.row];
         }
         
+        [[segue destinationViewController] setParentView:@"Por Nombre"];
         [[segue destinationViewController] setDetailItem:restaurant];
     }
 }

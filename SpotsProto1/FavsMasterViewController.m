@@ -105,6 +105,8 @@
     {
         NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
         Restaurant* restaurant =[favorites objectAtIndex:indexPath.row];
+        
+        [[segue destinationViewController] setParentView:@"Favoritos"];
         [[segue destinationViewController] setDetailItem:restaurant];
     }
 }
