@@ -126,6 +126,34 @@
     return typeKeys;
 }
 
+- (void)getRestaurantDetails
+{
+    PFQuery* query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query selectKeys:@[@"sucursales"]];
+    [query whereKey:@"ciudad" equalTo:self.placemark.locality];
+    [query whereKey:@"tieneSucursales" equalTo:@YES];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *sucursales, NSError *error) {
+        if (!error && [sucursales count] > 0)
+        {
+            for (PFObject* object in sucursales)
+            {
+                NSString* id = object.objectId;
+                Restaurant* restaurant = [self findRestaurantBySpotId:id];
+                
+                if ([restaurant.sucursales count] == 0)
+                {
+                    restaurant.sucursales = object[@"sucursales"];
+                }
+            }
+        }
+        
+        
+    }];
+    
+}
+
 - (void)getRestaurantDetails:(Restaurant*)restaurant
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];

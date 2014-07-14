@@ -30,6 +30,7 @@
 - (NSMutableArray*)getFavoriteRestaurants;
 - (void)removeFavoriteRestaurant:(NSInteger)index;
 - (void)addFavoriteRestaurant:(NSString*)objectId;
+- (void)getRestaurantDetails;
 - (void)getRestaurantDetails:(Restaurant*)restaurant;
 
 @end

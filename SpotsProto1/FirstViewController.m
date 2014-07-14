@@ -147,6 +147,14 @@
                 RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
                 bool data = [api loadRestaurants:placemark];
                 
+                
+                dispatch_queue_t downloadQueue = dispatch_queue_create("loadSucursales", NULL);
+                dispatch_async(downloadQueue, ^{
+                    
+                    RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
+                    [api getRestaurantDetails];
+                });
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
                         if (data)
