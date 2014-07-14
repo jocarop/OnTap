@@ -10,6 +10,7 @@
 #import "Mixpanel.h"
 #import "RestaurantsAPI.h"
 #import "MBProgressHUD.h"
+#import "Util.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation RestaurantDetailViewController
@@ -117,16 +118,25 @@
     CGFloat width = self.view.frame.size.width;
     
     UIButton* favoritesBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [favoritesBtn setFrame:CGRectMake(9, 10, width - 18, 44)];
     [favoritesBtn setTitle:@"Agregar a Favoritos" forState:UIControlStateNormal];
-    [favoritesBtn setBackgroundColor:[UIColor whiteColor]];
-    favoritesBtn.reversesTitleShadowWhenHighlighted = YES;
-
+    [favoritesBtn sizeToFit];
+    
+    if ([Util isVersion7])
+    {
+        CGFloat x = (width - favoritesBtn.frame.size.width - 20)/2;
+        [favoritesBtn setBackgroundColor:[UIColor whiteColor]];
+        [favoritesBtn setFrame:CGRectMake(x, 10, favoritesBtn.frame.size.width + 20, favoritesBtn.frame.size.height)];
+        favoritesBtn.layer.borderWidth=0.5;
+        favoritesBtn.layer.borderColor=[[UIColor lightGrayColor] CGColor];
+    }
+    else
+    {
+        CGFloat x = (width - favoritesBtn.frame.size.width)/2;
+        [favoritesBtn setFrame:CGRectMake(x, 10, favoritesBtn.frame.size.width, favoritesBtn.frame.size.height)];
+    }
+    
     [favoritesBtn addTarget: self action: @selector(addToFavorites:)
      forControlEvents: UIControlEventTouchDown];
-    
-    favoritesBtn.layer.borderColor = [self.tableView separatorColor].CGColor;
-    favoritesBtn.layer.borderWidth = 0.5;
     
     UILabel* onTapLink = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, width, 44)];
     onTapLink.text = @"wwww.ontap.com.mx";

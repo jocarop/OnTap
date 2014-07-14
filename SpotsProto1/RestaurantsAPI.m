@@ -26,29 +26,6 @@
 
 @synthesize delegate;
 
-- (void)addRestaurant
-{
-    PFObject *gameScore = [PFObject objectWithClassName:@"Restaurant"];
-    gameScore[@"nombre"] = @"KeBurros";
-    gameScore[@"tipo"] = @"Tacos";
-    gameScore[@"ciudad"] = @"Hermosillo";
-    gameScore[@"tieneSucursales"] = @YES;
-    
-    NSDictionary *dictionary1 = @{@"sucursal": @"Pitic",
-                                 @"telefono": @"662143869"};
-    
-    NSDictionary *dictionary2 = @{@"sucursal": @"Morelos",
-                                 @"telefono": @"662146394"};
-    
-    NSMutableArray* array = [[NSMutableArray alloc] init];
-    [array addObject:dictionary1];
-    [array addObject:dictionary2];
-    
-    gameScore[@"sucursales"] = array;
-    
-    [gameScore saveInBackground];
-}
-
 + (RestaurantsAPI*)sharedInstance
 {
     static RestaurantsAPI* _sharedInstance = nil;
@@ -65,7 +42,10 @@
 {
     self.placemark = placemark;
     NSString* ciudad = placemark.locality;
-
+    
+    if (![ciudad isEqual:@"Hermosillo"])
+        ciudad = @"Hermosillo";
+    
     restaurants = [NSMutableArray array];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
