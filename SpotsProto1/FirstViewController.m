@@ -11,6 +11,7 @@
 #import "RestaurantsAPI.h"
 #import "MBProgressHUD.h"
 #import "TSMessage.h"
+#import "Util.h"
 
 @interface FirstViewController ()
 {
@@ -24,7 +25,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-      
+   
+    if ([Util isVersion7])
+    {
+        UIColor* barColor = [UIColor colorWithRed:255.0/255.0 green:144.0/255.0 blue:66.0/255.0 alpha:1];
+        [self.tabBar setTintColor:barColor];
+    }
+    else
+    {
+        UIColor* gray = [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1];
+        [self.tabBar setTintColor:gray];
+    }
+    
     if([CLLocationManager locationServicesEnabled])
     {
         [[self locationManager] startUpdatingLocation];
@@ -147,13 +159,12 @@
                 RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
                 bool data = [api loadRestaurants:placemark];
                 
-                
-                dispatch_queue_t downloadQueue = dispatch_queue_create("loadSucursales", NULL);
+                /*dispatch_queue_t downloadQueue = dispatch_queue_create("loadSucursales", NULL);
                 dispatch_async(downloadQueue, ^{
                     
                     RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
                     [api getRestaurantDetails];
-                });
+                });*/
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
@@ -161,6 +172,7 @@
                         {
                             UINavigationController* navController = (UINavigationController*)self.selectedViewController;
                             UITableViewController* viewController = (UITableViewController*)[navController visibleViewController];
+                            [viewController.navigationItem setTitle:placemark.locality];
                             [viewController.tableView reloadData];
                         }
                         else

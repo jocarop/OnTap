@@ -45,7 +45,9 @@
         self.nombre = object[@"nombre"];
         self.tipo = object[@"tipo"];
         self.telefono = object[@"telefono"];
+        self.direccion = object[@"direccion"];
         self.tieneSucursales = [object[@"tieneSucursales"] boolValue];
+        self.tieneImagen = [object[@"tieneImagen"] boolValue];
     }
     
     return self;

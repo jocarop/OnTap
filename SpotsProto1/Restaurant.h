@@ -16,9 +16,10 @@
 @property (nonatomic, strong) NSString* telefono;
 @property (nonatomic, strong) NSString* direccion;
 @property (nonatomic, strong) NSString* tipo;
-@property (nonatomic, strong) NSString* imagen;
 @property (nonatomic, assign) BOOL tieneSucursales;
 @property (nonatomic, strong) NSArray* sucursales;
+@property (nonatomic, assign) BOOL tieneImagen;
+@property (nonatomic, strong) UIImage* imagen;
 
 - (id)initFromParseObject:(PFObject*)object;
 - (id)initWithPFObject:(PFObject*)object;

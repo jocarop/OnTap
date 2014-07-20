@@ -10,6 +10,7 @@
 #import "Restaurant.h"
 #import "RestaurantDetailViewController.h"
 #import "MBProgressHUD.h"
+#import "Util.h"
 
 @interface FavsMasterViewController ()
 {
@@ -37,9 +38,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
+    UIColor* barColor = [UIColor colorWithRed:255.0/255.0 green:144.0/255.0 blue:66.0/255.0 alpha:0.9f];
+    
+    if ([Util isVersion7])
+    {
+        [self.navigationController.navigationBar setBarTintColor:barColor];
+        [self.navigationController.navigationBar setTranslucent:YES];
+        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    }
+    else
+    {
+        [self.navigationController.navigationBar setTintColor:barColor];
+        [self.navigationController.navigationBar setTranslucent:NO];
+    }
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     dispatch_queue_t downloadQueue = dispatch_queue_create("loadFavorites", NULL);

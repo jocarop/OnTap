@@ -49,7 +49,7 @@
     restaurants = [NSMutableArray array];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
-    [query selectKeys:@[@"nombre", @"tipo", @"telefono", @"tieneSucursales"]];
+    [query selectKeys:@[@"nombre", @"tipo", @"telefono", @"direccion", @"tieneSucursales", @"tieneImagen"]];
     [query whereKey:@"ciudad" equalTo:ciudad];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
 
@@ -161,6 +161,17 @@
     PFObject* object = [query getObjectWithId:restaurant.objectId];
     
     restaurant.sucursales = object[@"sucursales"];
+}
+
+- (void)getRestaurantImage:(Restaurant*)restaurant
+{
+    PFQuery* query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query selectKeys:@[@"imagen"]];
+    
+    PFObject* object = [query getObjectWithId:restaurant.objectId];
+    PFFile *imageFile = object[@"imagen"];
+    NSData* imageData = [imageFile getData];
+    restaurant.imagen = [UIImage imageWithData:imageData];
 }
 
 - (void)loadFavoriteRestaurants
