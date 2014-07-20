@@ -79,7 +79,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImageView* imageView = [headerView.subviews objectAtIndex:0];
                 imageView.image = _detailItem.imagen;
-                imageView.alpha = 0.7f;
+                //imageView.alpha = 0.9f;
                 [spinner stopAnimating];
             });
             
@@ -112,9 +112,9 @@
     
     CGFloat width = self.view.frame.size.width;
 
-    UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, 100)];
+    UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, 134)];
     imageView.image = _detailItem.imagen;
-    imageView.alpha = 0.7f;
+    //imageView.alpha = 0.7f;
     
     UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 65, width, 25)];
     titleLabel.text = _detailItem.nombre;
@@ -129,18 +129,40 @@
     detailLabel.text = _detailItem.tipo;
     detailLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0];
     detailLabel.backgroundColor = [UIColor clearColor];
-    detailLabel.textColor = [UIColor grayColor];
+    detailLabel.textColor = [UIColor whiteColor];
+    detailLabel.shadowColor = [UIColor grayColor];
+    detailLabel.shadowOffset = CGSizeMake(1, 1);
+    
+    UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 100, width, 34)];
+    [toolbar setBackgroundColor:[UIColor lightGrayColor]];
+    toolbar.alpha = 0.7f;
+    [toolbar setTintColor:[UIColor blackColor]];
+    
+    UIImage* favorites = [UIImage imageNamed:@"type.png"];
+    UIBarButtonItem *addToFavorites = [[UIBarButtonItem alloc] initWithImage:favorites style:UIBarButtonItemStylePlain target:self action:@selector(addToFavorites:)];
+    [addToFavorites setImage:favorites];
+    [addToFavorites setWidth:96];
+
+    UIBarButtonItem *showMap = [[UIBarButtonItem alloc] initWithImage:favorites style:UIBarButtonItemStylePlain target:self action:@selector(showMap:)];
+    [showMap setWidth:96];
+    
+    UIBarButtonItem *showPhotos = [[UIBarButtonItem alloc] initWithImage:favorites style:UIBarButtonItemStylePlain target:self action:@selector(showPhotos:)];
+    [showPhotos setWidth:96];
+    
+    NSArray *buttonItems = [NSArray arrayWithObjects:addToFavorites, showMap, showPhotos, nil];
+    [toolbar setItems:buttonItems];
     
     [headerView addSubview:imageView];
     [headerView addSubview:titleLabel];
     [headerView addSubview:detailLabel];
+    [headerView addSubview:toolbar];
     
     return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 100.0f;
+    return 134.0f;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -149,43 +171,16 @@
     
     CGFloat width = self.view.frame.size.width;
     
-    UIButton* favoritesBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [favoritesBtn setTitle:@"Agregar a Favoritos" forState:UIControlStateNormal];
-    [favoritesBtn sizeToFit];
-    
-    if ([Util isVersion7])
-    {
-        CGFloat x = (width - favoritesBtn.frame.size.width - 20)/2;
-        [favoritesBtn setBackgroundColor:[UIColor whiteColor]];
-        [favoritesBtn setFrame:CGRectMake(x, 10, favoritesBtn.frame.size.width + 20, favoritesBtn.frame.size.height)];
-        favoritesBtn.layer.borderWidth=0.5;
-        favoritesBtn.layer.borderColor=[[UIColor lightGrayColor] CGColor];
-    }
-    else
-    {
-        CGFloat x = (width - favoritesBtn.frame.size.width)/2;
-        [favoritesBtn setFrame:CGRectMake(x, 10, favoritesBtn.frame.size.width, favoritesBtn.frame.size.height)];
-    }
-    
-    [favoritesBtn addTarget: self action: @selector(addToFavorites:)
-     forControlEvents: UIControlEventTouchDown];
-    
     UILabel* onTapLink = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, width, 44)];
     onTapLink.text = @"wwww.ontap.com.mx";
     onTapLink.font = [UIFont fontWithName:@"System" size:15.0];
     onTapLink.textColor = [UIColor lightGrayColor];
     onTapLink.textAlignment = NSTextAlignmentCenter;
     onTapLink.backgroundColor = [UIColor clearColor];
-    
-    [footerView addSubview:favoritesBtn];
+
     [footerView addSubview:onTapLink];
 
     return footerView;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 100;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -264,10 +259,21 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (IBAction)addToFavorites:(id)sender
+- (IBAction)addToFavorites:(UIButton*)sender
 {
     RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
     [api addFavoriteRestaurant:_detailItem.objectId];
+}
+
+- (IBAction)showMap:(UIButton*)sender
+{
+    
+}
+
+
+- (IBAction)showPhotos:(UIButton*)sender
+{
+    
 }
 
 @end
