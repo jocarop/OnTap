@@ -134,9 +134,13 @@
     detailLabel.shadowOffset = CGSizeMake(1, 1);
     
     UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 100, width, 34)];
-    [toolbar setBackgroundColor:[UIColor lightGrayColor]];
     toolbar.alpha = 0.7f;
-    [toolbar setTintColor:[UIColor blackColor]];
+    
+    if ([Util isVersion7])
+    {
+        [toolbar setBackgroundColor:[UIColor lightGrayColor]];
+        [toolbar setTintColor:[UIColor blackColor]];
+    }
     
     UIImage* favorites = [UIImage imageNamed:@"type.png"];
     UIBarButtonItem *addToFavorites = [[UIBarButtonItem alloc] initWithImage:favorites style:UIBarButtonItemStylePlain target:self action:@selector(addToFavorites:)];
@@ -162,7 +166,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 134.0f;
+    if ([Util isVersion7])
+        return 134.0f;
+    else
+        return 144.0f;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
