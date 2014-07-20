@@ -102,7 +102,7 @@
     }
     else
     {
-        return 2;
+        return 5;
     }
 }
 
@@ -214,6 +214,24 @@
         cell.detailTextLabel.text = _detailItem.direccion;
         cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.detailTextLabel.numberOfLines = 0;
+    }
+    
+    if (indexPath.row == 2 && !_detailItem.tieneSucursales)
+    {
+        cell.textLabel.text = @"Horario";
+        cell.detailTextLabel.text = _detailItem.horario;
+    }
+    
+    if (indexPath.row == 3 && !_detailItem.tieneSucursales)
+    {
+        cell.textLabel.text = @"Precio";
+        cell.detailTextLabel.text = _detailItem.precio;
+    }
+    
+    if (indexPath.row == 4 && !_detailItem.tieneSucursales)
+    {
+        cell.textLabel.text = @"Página";
+        cell.detailTextLabel.text = _detailItem.pagina;
     }
     
     return cell;

@@ -43,13 +43,13 @@
     self.placemark = placemark;
     NSString* ciudad = placemark.locality;
     
-    if (![ciudad isEqual:@"Hermosillo"])
-        ciudad = @"Hermosillo";
+    if ([ciudad isEqual:@"Cupertino"])
+        ciudad = @"Sunnyvale";
     
     restaurants = [NSMutableArray array];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
-    [query selectKeys:@[@"nombre", @"tipo", @"telefono", @"direccion", @"tieneSucursales", @"tieneImagen"]];
+    [query selectKeys:@[@"nombre", @"tipo", @"telefono", @"direccion", @"tieneSucursales", @"tieneImagen", @"precio", @"horario", @"pagina"]];
     [query whereKey:@"ciudad" equalTo:ciudad];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
 

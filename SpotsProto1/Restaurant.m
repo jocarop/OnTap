@@ -17,6 +17,9 @@
 @synthesize tipo = _tipo;
 @synthesize imagen = _imagen;
 @synthesize sucursales = _sucursales;
+@synthesize precio = _precio;
+@synthesize horario = _horario;
+@synthesize pagina = _pagina;
 
 - (id)initFromParseObject:(PFObject *)object
 {
@@ -48,6 +51,9 @@
         self.direccion = object[@"direccion"];
         self.tieneSucursales = [object[@"tieneSucursales"] boolValue];
         self.tieneImagen = [object[@"tieneImagen"] boolValue];
+        self.precio = object[@"precio"];
+        self.horario = object[@"horario"];
+        self.pagina = object[@"pagina"];
     }
     
     return self;

@@ -20,6 +20,9 @@
 @property (nonatomic, strong) NSArray* sucursales;
 @property (nonatomic, assign) BOOL tieneImagen;
 @property (nonatomic, strong) UIImage* imagen;
+@property (nonatomic, strong) NSString* precio;
+@property (nonatomic, strong) NSString* horario;
+@property (nonatomic, strong) NSString* pagina;
 
 - (id)initFromParseObject:(PFObject*)object;
 - (id)initWithPFObject:(PFObject*)object;
