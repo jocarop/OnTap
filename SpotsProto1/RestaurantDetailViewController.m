@@ -253,7 +253,7 @@
                                             @"vista": parentView
                                         }];
         
-    NSString *dialThis = [NSString stringWithFormat:@"tel:%@", telefono];
+    NSString *dialThis = [NSString stringWithFormat:@"telprompt:%@", telefono];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:dialThis]];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
