@@ -88,6 +88,8 @@
 		EFBC57CF1932BF8A007A9C80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFBC57CD1932BF8A007A9C80 /* InfoPlist.strings */; };
 		EFBC57D11932BF8A007A9C80 /* SpotsProto1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57D01932BF8A007A9C80 /* SpotsProto1Tests.m */; };
 		EFBC57E01932CD04007A9C80 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57DF1932CD04007A9C80 /* Restaurant.m */; };
+		EFF2268D197F5983007A5A3B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF2268C197F5983007A5A3B /* MapViewController.m */; };
+		EFF2268F197F59AE007A5A3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF2268E197F59AE007A5A3B /* MapKit.framework */; };
 		EFF43ED3194289B600A62E4B /* TypeMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */; };
 		EFF43F0119429D7800A62E4B /* MPCJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43EF419429D7800A62E4B /* MPCJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EFF43F0219429D7800A62E4B /* MPCJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43EF619429D7800A62E4B /* MPCJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -206,6 +208,9 @@
 		EFBC57D01932BF8A007A9C80 /* SpotsProto1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotsProto1Tests.m; sourceTree = "<group>"; };
 		EFBC57DE1932CD04007A9C80 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		EFBC57DF1932CD04007A9C80 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		EFF2268B197F5983007A5A3B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		EFF2268C197F5983007A5A3B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		EFF2268E197F59AE007A5A3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EFF43ED1194289B600A62E4B /* TypeMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeMasterViewController.h; sourceTree = "<group>"; };
 		EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeMasterViewController.m; sourceTree = "<group>"; };
 		EFF43EF319429D7800A62E4B /* MPCJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCJSONDataSerializer.h; sourceTree = "<group>"; };
@@ -227,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF2268F197F59AE007A5A3B /* MapKit.framework in Frameworks */,
 				EF177C191963A62B00D72A4F /* SystemConfiguration.framework in Frameworks */,
 				EF177C171963A62100D72A4F /* StoreKit.framework in Frameworks */,
 				EF177C151963A61A00D72A4F /* Security.framework in Frameworks */,
@@ -412,6 +418,7 @@
 		EFBC57A11932BF8A007A9C80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFF2268E197F59AE007A5A3B /* MapKit.framework */,
 				EF177C181963A62B00D72A4F /* SystemConfiguration.framework */,
 				EF177C161963A62100D72A4F /* StoreKit.framework */,
 				EF177C141963A61A00D72A4F /* Security.framework */,
@@ -446,6 +453,8 @@
 				EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */,
 				EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */,
 				EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */,
+				EFF2268B197F5983007A5A3B /* MapViewController.h */,
+				EFF2268C197F5983007A5A3B /* MapViewController.m */,
 				EF2D50F3194F8B3F0075EFE9 /* Restaurant+TableRepresentation.h */,
 				EF2D50F4194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m */,
 				EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */,
@@ -707,6 +716,7 @@
 				EF062D521967170A00E1EA0A /* MBProgressHUD.m in Sources */,
 				EF7B848A1966541300B33B1A /* FirstViewController.m in Sources */,
 				EFF43F0219429D7800A62E4B /* MPCJSONSerializer.m in Sources */,
+				EFF2268D197F5983007A5A3B /* MapViewController.m in Sources */,
 				EFBC57B91932BF8A007A9C80 /* AlphaMasterViewController.m in Sources */,
 				EFF43F0619429D7800A62E4B /* Mixpanel.m in Sources */,
 				EF2D50EA194F59D40075EFE9 /* FavsMasterViewController.m in Sources */,

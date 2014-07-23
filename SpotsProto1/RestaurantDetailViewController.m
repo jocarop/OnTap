@@ -174,7 +174,7 @@
     [mapBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     mapBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [mapBtn sizeToFit];
-    [mapBtn addTarget:self action:@selector(addToFavorites:) forControlEvents:UIControlEventTouchUpInside];
+    [mapBtn addTarget:self action:@selector(showMap:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showMap = [[UIBarButtonItem alloc] initWithCustomView:mapBtn];
     
     UIImage* photos = [UIImage imageNamed:@"name.png"];
@@ -183,7 +183,7 @@
     [photosBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     photosBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [photosBtn sizeToFit];
-    [mapBtn addTarget:self action:@selector(addToFavorites:) forControlEvents:UIControlEventTouchUpInside];
+    [mapBtn addTarget:self action:@selector(showPhotos:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showPhotos = [[UIBarButtonItem alloc] initWithCustomView:photosBtn];
     
     NSArray *buttonItems = [NSArray arrayWithObjects:addToFavorites, showMap, showPhotos, nil];
@@ -325,7 +325,7 @@
 
 - (IBAction)showMap:(UIButton*)sender
 {
-    
+    [self performSegueWithIdentifier: @"showMap" sender:self];
 }
 
 
