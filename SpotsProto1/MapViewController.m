@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "Util.h"
 
 @interface MapViewController ()
 
@@ -26,14 +27,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+  
     UIColor* barColor = [UIColor colorWithRed:255.0/255.0 green:144.0/255.0 blue:66.0/255.0 alpha:0.9f];
-    [self.myNavigationBar setBarTintColor:barColor];
-    [self.myNavigationBar setTranslucent:YES];
-    [self.myNavigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
+    if ([Util isVersion7])
+    {
+        [self.view setTintColor:[UIColor whiteColor]];
+        [self.myNavigationBar setBarTintColor:barColor];
+        [self.myNavigationBar setTranslucent:YES];
+        [self.myNavigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    }
+    else
+    {
+        self.myNavigationBar.frame = CGRectMake(0, 0, 0, 0);
+        [self.myNavigationBar sizeToFit];
+        [self.myNavigationBar setTintColor:barColor];
+        [self.myNavigationBar setTranslucent:NO];
+    }
+        
     UINavigationItem* navItem = [[UINavigationItem alloc] initWithTitle:@"Mapa"];
-    UIBarButtonItem* close = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeMap:)];
+    UIBarButtonItem* close = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeMap:)];
     
     navItem.rightBarButtonItem = close;
     NSArray* items = [NSArray arrayWithObjects:navItem, nil];

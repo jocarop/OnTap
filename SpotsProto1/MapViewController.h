@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface MapViewController : UIViewController <UINavigationBarDelegate>
 
 @property IBOutlet UINavigationBar* myNavigationBar;
+@property (weak, nonatomic) IBOutlet MKMapView* mapVeiw;
 
 @end
