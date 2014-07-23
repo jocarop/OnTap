@@ -142,16 +142,49 @@
         [toolbar setTintColor:[UIColor blackColor]];
     }
     
-    UIImage* favorites = [UIImage imageNamed:@"type.png"];
-    UIBarButtonItem *addToFavorites = [[UIBarButtonItem alloc] initWithImage:favorites style:UIBarButtonItemStylePlain target:self action:@selector(addToFavorites:)];
-    [addToFavorites setImage:favorites];
-    [addToFavorites setWidth:96];
-
-    UIBarButtonItem *showMap = [[UIBarButtonItem alloc] initWithImage:favorites style:UIBarButtonItemStylePlain target:self action:@selector(showMap:)];
-    [showMap setWidth:96];
+    UIButton* favoritesBtn;
+    UIButton* mapBtn;
+    UIButton* photosBtn;
     
-    UIBarButtonItem *showPhotos = [[UIBarButtonItem alloc] initWithImage:favorites style:UIBarButtonItemStylePlain target:self action:@selector(showPhotos:)];
-    [showPhotos setWidth:96];
+    if ([Util isVersion7])
+    {
+        favoritesBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        mapBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        photosBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    }
+    else
+    {
+        favoritesBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        mapBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        photosBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    
+    UIImage* favorites = [UIImage imageNamed:@"favorite.png"];
+    [favoritesBtn setImage:favorites forState:UIControlStateNormal];
+    [favoritesBtn setTitle:@" Favoritos" forState:UIControlStateNormal];
+    [favoritesBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    favoritesBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    [favoritesBtn sizeToFit];
+    [favoritesBtn addTarget:self action:@selector(addToFavorites:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *addToFavorites = [[UIBarButtonItem alloc] initWithCustomView:favoritesBtn];
+    
+    UIImage* map = [UIImage imageNamed:@"type.png"];
+    [mapBtn setImage:map forState:UIControlStateNormal];
+    [mapBtn setTitle:@" Ver Mapa" forState:UIControlStateNormal];
+    [mapBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    mapBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    [mapBtn sizeToFit];
+    [mapBtn addTarget:self action:@selector(addToFavorites:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *showMap = [[UIBarButtonItem alloc] initWithCustomView:mapBtn];
+    
+    UIImage* photos = [UIImage imageNamed:@"name.png"];
+    [photosBtn setImage:photos forState:UIControlStateNormal];
+    [photosBtn setTitle:@" Ver Fotos" forState:UIControlStateNormal];
+    [photosBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    photosBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    [photosBtn sizeToFit];
+    [mapBtn addTarget:self action:@selector(addToFavorites:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *showPhotos = [[UIBarButtonItem alloc] initWithCustomView:photosBtn];
     
     NSArray *buttonItems = [NSArray arrayWithObjects:addToFavorites, showMap, showPhotos, nil];
     [toolbar setItems:buttonItems];
