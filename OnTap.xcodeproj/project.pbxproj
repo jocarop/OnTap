@@ -457,6 +457,8 @@
 				EFF2268C197F5983007A5A3B /* MapViewController.m */,
 				EF2D50F3194F8B3F0075EFE9 /* Restaurant+TableRepresentation.h */,
 				EF2D50F4194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m */,
+				EFBC57DE1932CD04007A9C80 /* Restaurant.h */,
+				EFBC57DF1932CD04007A9C80 /* Restaurant.m */,
 				EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */,
 				EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */,
 				EF28A1881974910800F7008F /* Util.h */,
@@ -464,7 +466,6 @@
 				EF062D501967170A00E1EA0A /* MBProgressHUD.h */,
 				EF062D511967170A00E1EA0A /* MBProgressHUD.m */,
 				EFBC57BD1932BF8A007A9C80 /* Images.xcassets */,
-				EFBC57DD1932CCC1007A9C80 /* Models */,
 				EF37BAC81935592C00A1373E /* Resources */,
 				EFBC57A91932BF8A007A9C80 /* Supporting Files */,
 			);
@@ -498,15 +499,6 @@
 				EFBC57CD1932BF8A007A9C80 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		EFBC57DD1932CCC1007A9C80 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EFBC57DE1932CD04007A9C80 /* Restaurant.h */,
-				EFBC57DF1932CD04007A9C80 /* Restaurant.m */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		EFF43EF019429D7800A62E4B /* Mixpanel */ = {

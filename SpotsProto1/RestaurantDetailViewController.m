@@ -7,6 +7,7 @@
 //
 
 #import "RestaurantDetailViewController.h"
+#import "MapViewController.h"
 #import "Mixpanel.h"
 #import "RestaurantsAPI.h"
 #import "MBProgressHUD.h"
@@ -328,10 +329,17 @@
     [self performSegueWithIdentifier: @"showMap" sender:self];
 }
 
-
 - (IBAction)showPhotos:(UIButton*)sender
 {
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showMap"])
+    {
+        [[segue destinationViewController] setRestLocation:_detailItem.geolocation];
+    }
 }
 
 @end

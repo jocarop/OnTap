@@ -163,7 +163,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RPY-Q7-d2g"/>
                     <connections>
-                        <outlet property="mapVeiw" destination="Xjt-P7-0Zf" id="bf7-mJ-Vp7"/>
+                        <outlet property="mapView" destination="Xjt-P7-0Zf" id="Gx0-Ce-cU0"/>
                         <outlet property="myNavigationBar" destination="uCV-Q9-sNI" id="pNH-hS-Rzj"/>
                     </connections>
                 </viewController>

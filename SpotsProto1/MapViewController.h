@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController <UINavigationBarDelegate>
+@interface MapViewController : UIViewController <UINavigationBarDelegate, MKMapViewDelegate>
 
 @property IBOutlet UINavigationBar* myNavigationBar;
-@property (weak, nonatomic) IBOutlet MKMapView* mapVeiw;
+@property (weak, nonatomic) IBOutlet MKMapView* mapView;
+@property (assign, nonatomic) CLLocationCoordinate2D restLocation;
 
 @end

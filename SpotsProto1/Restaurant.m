@@ -20,6 +20,7 @@
 @synthesize precio = _precio;
 @synthesize horario = _horario;
 @synthesize pagina = _pagina;
+@synthesize geolocation = _geolocation;
 
 - (id)initFromParseObject:(PFObject *)object
 {
@@ -54,6 +55,9 @@
         self.precio = object[@"precio"];
         self.horario = object[@"horario"];
         self.pagina = object[@"pagina"];
+        
+        PFGeoPoint* geoPoint = object[@"geolocation"];
+        self.geolocation = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
     }
     
     return self;

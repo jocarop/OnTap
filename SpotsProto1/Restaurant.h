@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSString* precio;
 @property (nonatomic, strong) NSString* horario;
 @property (nonatomic, strong) NSString* pagina;
+@property (nonatomic, assign) CLLocationCoordinate2D geolocation;
 
 - (id)initFromParseObject:(PFObject*)object;
 - (id)initWithPFObject:(PFObject*)object;

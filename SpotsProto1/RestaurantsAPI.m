@@ -49,7 +49,7 @@
     restaurants = [NSMutableArray array];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
-    [query selectKeys:@[@"nombre", @"tipo", @"telefono", @"direccion", @"tieneSucursales", @"tieneImagen", @"precio", @"horario", @"pagina"]];
+    [query selectKeys:@[@"nombre", @"tipo", @"telefono", @"direccion", @"tieneSucursales", @"tieneImagen", @"precio", @"horario", @"pagina", @"geolocation"]];
     [query whereKey:@"ciudad" equalTo:ciudad];
     query.cachePolicy = kPFCachePolicyNetworkElseCache;
 
