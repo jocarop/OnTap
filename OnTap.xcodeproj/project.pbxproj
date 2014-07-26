@@ -60,6 +60,9 @@
 		EF3E82CB195ABA4900784331 /* AppIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C8195ABA4900784331 /* AppIcon58x58.png */; };
 		EF3E82CC195ABA4900784331 /* AppIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C9195ABA4900784331 /* AppIcon80x80.png */; };
 		EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */; };
+		EF6E833219833F7B00EAB5D7 /* ver-mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E833119833F7B00EAB5D7 /* ver-mapa.png */; };
+		EF6E83381983402A00EAB5D7 /* ver-fotos.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E83371983402A00EAB5D7 /* ver-fotos.png */; };
+		EF6E833A1983407A00EAB5D7 /* favoritos.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E83391983407A00EAB5D7 /* favoritos.png */; };
 		EF7B848A1966541300B33B1A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7B84891966541300B33B1A /* FirstViewController.m */; };
 		EF7B848C19667A8200B33B1A /* camacho.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF7B848B19667A8200B33B1A /* camacho.gpx */; };
 		EF8001BE1965F5860079FC95 /* name_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001BA1965F5860079FC95 /* name_selected.png */; };
@@ -175,6 +178,9 @@
 		EF3E82C9195ABA4900784331 /* AppIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80x80.png; sourceTree = "<group>"; };
 		EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantAnnotation.h; path = ../RestaurantAnnotation.h; sourceTree = "<group>"; };
 		EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantAnnotation.m; path = ../RestaurantAnnotation.m; sourceTree = "<group>"; };
+		EF6E833119833F7B00EAB5D7 /* ver-mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-mapa.png"; sourceTree = "<group>"; };
+		EF6E83371983402A00EAB5D7 /* ver-fotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-fotos.png"; sourceTree = "<group>"; };
+		EF6E83391983407A00EAB5D7 /* favoritos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritos.png; sourceTree = "<group>"; };
 		EF7B84881966541300B33B1A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		EF7B84891966541300B33B1A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		EF7B848B19667A8200B33B1A /* camacho.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = camacho.gpx; path = SpotsProto1/camacho.gpx; sourceTree = "<group>"; };
@@ -371,6 +377,9 @@
 		EF37BAC81935592C00A1373E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF6E83391983407A00EAB5D7 /* favoritos.png */,
+				EF6E83371983402A00EAB5D7 /* ver-fotos.png */,
+				EF6E833119833F7B00EAB5D7 /* ver-mapa.png */,
 				EF8001CA1965FA120079FC95 /* favorite_selected.png */,
 				EF8001CB1965FA120079FC95 /* favorite_selected@2x.png */,
 				EF8001CC1965FA120079FC95 /* favorite.png */,
@@ -642,6 +651,7 @@
 				EF062D811967200D00E1EA0A /* README.md in Resources */,
 				EF8001CE1965FA120079FC95 /* favorite_selected.png in Resources */,
 				EF3E82CB195ABA4900784331 /* AppIcon58x58.png in Resources */,
+				EF6E833219833F7B00EAB5D7 /* ver-mapa.png in Resources */,
 				EF062D871967200D00E1EA0A /* NotificationBackgroundMessage.png in Resources */,
 				EF062D8A1967200D00E1EA0A /* NotificationBackgroundSuccess@2x.png in Resources */,
 				EF062D911967200D00E1EA0A /* NotificationButtonBackground.png in Resources */,
@@ -661,6 +671,7 @@
 				EF8001D11965FA120079FC95 /* favorite@2x.png in Resources */,
 				EF3E82C6195ABA1400784331 /* AppIcon120x120.png in Resources */,
 				EF8001BF1965F5860079FC95 /* name_selected@2x.png in Resources */,
+				EF6E833A1983407A00EAB5D7 /* favoritos.png in Resources */,
 				EF3E82BE195AB8A900784331 /* Default-568h@2x.png in Resources */,
 				EF062D8F1967200D00E1EA0A /* NotificationBackgroundWarningIcon.png in Resources */,
 				EFBC57BE1932BF8A007A9C80 /* Images.xcassets in Resources */,
@@ -672,6 +683,7 @@
 				EFBC57AD1932BF8A007A9C80 /* InfoPlist.strings in Resources */,
 				EFBC57B61932BF8A007A9C80 /* Main.storyboard in Resources */,
 				EF8001C01965F5860079FC95 /* name.png in Resources */,
+				EF6E83381983402A00EAB5D7 /* ver-fotos.png in Resources */,
 				EF3E82C5195ABA1400784331 /* AppIcon114x114.png in Resources */,
 				EF062D7C1967200D00E1EA0A /* .gitmodules in Resources */,
 				EF8001C11965F5860079FC95 /* name@2x.png in Resources */,

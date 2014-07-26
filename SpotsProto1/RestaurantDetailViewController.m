@@ -162,31 +162,34 @@
         photosBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     }
     
-    UIImage* favorites = [UIImage imageNamed:@"favorite.png"];
+    UIImage* favorites = [UIImage imageNamed:@"favoritos.png"];
     [favoritesBtn setImage:favorites forState:UIControlStateNormal];
     [favoritesBtn setTitle:@" Favoritos" forState:UIControlStateNormal];
     [favoritesBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     favoritesBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [favoritesBtn sizeToFit];
+    [favoritesBtn setFrame:CGRectMake(0, 0, width/3.5, favoritesBtn.frame.size.height)];
     [favoritesBtn addTarget:self action:@selector(addToFavorites:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *addToFavorites = [[UIBarButtonItem alloc] initWithCustomView:favoritesBtn];
     
-    UIImage* map = [UIImage imageNamed:@"type.png"];
+    UIImage* map = [UIImage imageNamed:@"ver-mapa.png"];
     [mapBtn setImage:map forState:UIControlStateNormal];
     [mapBtn setTitle:@" Ver Mapa" forState:UIControlStateNormal];
     [mapBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     mapBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [mapBtn sizeToFit];
+    [mapBtn setFrame:CGRectMake(0, 0, width/4, mapBtn.frame.size.height)];
     [mapBtn addTarget:self action:@selector(showMap:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showMap = [[UIBarButtonItem alloc] initWithCustomView:mapBtn];
     
-    UIImage* photos = [UIImage imageNamed:@"name.png"];
+    UIImage* photos = [UIImage imageNamed:@"ver-fotos.png"];
     [photosBtn setImage:photos forState:UIControlStateNormal];
     [photosBtn setTitle:@" Ver Fotos" forState:UIControlStateNormal];
     [photosBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     photosBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [photosBtn sizeToFit];
-    [mapBtn addTarget:self action:@selector(showPhotos:) forControlEvents:UIControlEventTouchUpInside];
+    [photosBtn setFrame:CGRectMake(0, 0, width/3, photosBtn.frame.size.height)];
+    [photosBtn addTarget:self action:@selector(showPhotos:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showPhotos = [[UIBarButtonItem alloc] initWithCustomView:photosBtn];
     
     NSArray *buttonItems = [NSArray arrayWithObjects:addToFavorites, showMap, showPhotos, nil];
