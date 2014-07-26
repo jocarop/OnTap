@@ -297,16 +297,37 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (_detailItem.tieneSucursales)
+    {
+        [self makePhoneCall:indexPath.row];
+    }
+    else
+    {
+        if (indexPath.row == 0)
+        {
+            [self makePhoneCall:indexPath.row];
+        }
+        else if (indexPath.row == 4)
+        {
+            //open webpage
+        }
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)makePhoneCall:(NSUInteger)index
+{
     NSString* telefono = _detailItem.telefono;
     if (_detailItem.tieneSucursales)
     {
-        telefono = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"telefono"];
+        telefono = [[_detailItem.sucursales objectAtIndex:index] objectForKey:@"telefono"];
     }
     
     NSString* sucursal = @"";
     if (_detailItem.tieneSucursales)
     {
-        sucursal = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"sucursal"];
+        sucursal = [[_detailItem.sucursales objectAtIndex:index] objectForKey:@"sucursal"];
     }
     
     Mixpanel* mixpanel = [Mixpanel sharedInstance];
@@ -315,12 +336,10 @@
                                             @"nombre": _detailItem.nombre,
                                             @"sucursal": sucursal,
                                             @"vista": parentView
-                                        }];
-        
+                                            }];
+    
     NSString *dialThis = [NSString stringWithFormat:@"telprompt:%@", telefono];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:dialThis]];
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (IBAction)addToFavorites:(UIButton*)sender

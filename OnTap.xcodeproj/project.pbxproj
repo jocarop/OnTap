@@ -181,6 +181,7 @@
 		EF6E833119833F7B00EAB5D7 /* ver-mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-mapa.png"; sourceTree = "<group>"; };
 		EF6E83371983402A00EAB5D7 /* ver-fotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-fotos.png"; sourceTree = "<group>"; };
 		EF6E83391983407A00EAB5D7 /* favoritos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritos.png; sourceTree = "<group>"; };
+		EF6E833B1983463E00EAB5D7 /* hermosillo.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = hermosillo.gpx; path = SpotsProto1/hermosillo.gpx; sourceTree = "<group>"; };
 		EF7B84881966541300B33B1A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		EF7B84891966541300B33B1A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		EF7B848B19667A8200B33B1A /* camacho.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = camacho.gpx; path = SpotsProto1/camacho.gpx; sourceTree = "<group>"; };
@@ -409,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7B848B19667A8200B33B1A /* camacho.gpx */,
+				EF6E833B1983463E00EAB5D7 /* hermosillo.gpx */,
 				EFBC57A81932BF8A007A9C80 /* SpotsProto1 */,
 				EF062D531967200C00E1EA0A /* TSMessages */,
 				EFF43EF019429D7800A62E4B /* Mixpanel */,
