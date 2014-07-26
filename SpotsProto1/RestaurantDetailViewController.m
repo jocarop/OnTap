@@ -327,6 +327,12 @@
 
 - (IBAction)showMap:(UIButton*)sender
 {
+    Mixpanel* mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Mapa visto" properties:@{
+                                            @"id": _detailItem.objectId,
+                                            @"nombre": _detailItem.nombre,
+                                            }];
+    
     [self performSegueWithIdentifier: @"showMap" sender:self];
 }
 
