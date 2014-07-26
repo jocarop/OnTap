@@ -59,6 +59,7 @@
 		EF3E82CA195ABA4900784331 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C7195ABA4900784331 /* AppIcon29x29.png */; };
 		EF3E82CB195ABA4900784331 /* AppIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C8195ABA4900784331 /* AppIcon58x58.png */; };
 		EF3E82CC195ABA4900784331 /* AppIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C9195ABA4900784331 /* AppIcon80x80.png */; };
+		EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */; };
 		EF7B848A1966541300B33B1A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7B84891966541300B33B1A /* FirstViewController.m */; };
 		EF7B848C19667A8200B33B1A /* camacho.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF7B848B19667A8200B33B1A /* camacho.gpx */; };
 		EF8001BE1965F5860079FC95 /* name_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001BA1965F5860079FC95 /* name_selected.png */; };
@@ -172,6 +173,8 @@
 		EF3E82C7195ABA4900784331 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		EF3E82C8195ABA4900784331 /* AppIcon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon58x58.png; sourceTree = "<group>"; };
 		EF3E82C9195ABA4900784331 /* AppIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80x80.png; sourceTree = "<group>"; };
+		EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantAnnotation.h; path = ../RestaurantAnnotation.h; sourceTree = "<group>"; };
+		EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantAnnotation.m; path = ../RestaurantAnnotation.m; sourceTree = "<group>"; };
 		EF7B84881966541300B33B1A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		EF7B84891966541300B33B1A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		EF7B848B19667A8200B33B1A /* camacho.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = camacho.gpx; path = SpotsProto1/camacho.gpx; sourceTree = "<group>"; };
@@ -447,18 +450,20 @@
 				EF7B84891966541300B33B1A /* FirstViewController.m */,
 				EFBC57B71932BF8A007A9C80 /* AlphaMasterViewController.h */,
 				EFBC57B81932BF8A007A9C80 /* AlphaMasterViewController.m */,
-				EF2D50E8194F59D40075EFE9 /* FavsMasterViewController.h */,
-				EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */,
 				EFF43ED1194289B600A62E4B /* TypeMasterViewController.h */,
 				EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */,
-				EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */,
-				EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */,
+				EF2D50E8194F59D40075EFE9 /* FavsMasterViewController.h */,
+				EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */,
 				EFF2268B197F5983007A5A3B /* MapViewController.h */,
 				EFF2268C197F5983007A5A3B /* MapViewController.m */,
+				EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */,
+				EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */,
 				EF2D50F3194F8B3F0075EFE9 /* Restaurant+TableRepresentation.h */,
 				EF2D50F4194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m */,
 				EFBC57DE1932CD04007A9C80 /* Restaurant.h */,
 				EFBC57DF1932CD04007A9C80 /* Restaurant.m */,
+				EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */,
+				EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */,
 				EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */,
 				EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */,
 				EF28A1881974910800F7008F /* Util.h */,
@@ -716,6 +721,7 @@
 				EFF43F0119429D7800A62E4B /* MPCJSONDataSerializer.m in Sources */,
 				EFF43ED3194289B600A62E4B /* TypeMasterViewController.m in Sources */,
 				EF28A18A1974910800F7008F /* Util.m in Sources */,
+				EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */,
 				EF37BACB193561F900A1373E /* RestaurantDetailViewController.m in Sources */,
 				EF062D7F1967200D00E1EA0A /* HexColor.m in Sources */,
 			);

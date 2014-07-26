@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "Util.h"
+#import "RestaurantAnnotation.h"
 
 @interface MapViewController ()
 
@@ -15,7 +16,7 @@
 
 @implementation MapViewController
 
-@synthesize restLocation;
+@synthesize annotation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,6 +57,9 @@
     
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
+    
+    if (annotation != nil)
+        [self.mapView addAnnotation:annotation];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
@@ -63,7 +67,7 @@
     if (userLocation.location.horizontalAccuracy > 50)
         return;
     
-    CLLocationDegrees latDelta = userLocation.coordinate.latitude - restLocation.latitude;
+    CLLocationDegrees latDelta = userLocation.coordinate.latitude - annotation.coordinate.latitude;
     MKCoordinateSpan span = MKCoordinateSpanMake(fabsf(latDelta*3),0.0);
     
     MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, span);

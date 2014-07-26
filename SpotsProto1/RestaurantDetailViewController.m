@@ -12,6 +12,7 @@
 #import "RestaurantsAPI.h"
 #import "MBProgressHUD.h"
 #import "Util.h"
+#import "RestaurantAnnotation.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation RestaurantDetailViewController
@@ -338,7 +339,11 @@
 {
     if ([[segue identifier] isEqualToString:@"showMap"])
     {
-        [[segue destinationViewController] setRestLocation:_detailItem.geolocation];
+        RestaurantAnnotation* annotation = [[RestaurantAnnotation alloc] init];
+        annotation.coordinate = _detailItem.geolocation;
+        annotation.title = _detailItem.nombre;
+        annotation.subtitle = _detailItem.tipo;
+        [[segue destinationViewController] setAnnotation:annotation];
     }
 }
 

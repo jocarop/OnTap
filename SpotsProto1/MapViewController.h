@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "RestaurantAnnotation.h"
 
 @interface MapViewController : UIViewController <UINavigationBarDelegate, MKMapViewDelegate>
 
 @property IBOutlet UINavigationBar* myNavigationBar;
 @property (weak, nonatomic) IBOutlet MKMapView* mapView;
-@property (assign, nonatomic) CLLocationCoordinate2D restLocation;
+@property (strong, nonatomic) RestaurantAnnotation* annotation;
 
 @end
