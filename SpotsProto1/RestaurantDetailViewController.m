@@ -168,7 +168,7 @@
     [favoritesBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     favoritesBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [favoritesBtn sizeToFit];
-    [favoritesBtn setFrame:CGRectMake(0, 0, width/3.5, favoritesBtn.frame.size.height)];
+    [favoritesBtn setFrame:CGRectMake(0, 0, width/2, favoritesBtn.frame.size.height)];
     [favoritesBtn addTarget:self action:@selector(addToFavorites:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *addToFavorites = [[UIBarButtonItem alloc] initWithCustomView:favoritesBtn];
     
@@ -182,7 +182,7 @@
     [mapBtn addTarget:self action:@selector(showMap:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showMap = [[UIBarButtonItem alloc] initWithCustomView:mapBtn];
     
-    UIImage* photos = [UIImage imageNamed:@"ver-fotos.png"];
+    /*UIImage* photos = [UIImage imageNamed:@"ver-fotos.png"];
     [photosBtn setImage:photos forState:UIControlStateNormal];
     [photosBtn setTitle:@" Ver Fotos" forState:UIControlStateNormal];
     [photosBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -191,8 +191,8 @@
     [photosBtn setFrame:CGRectMake(0, 0, width/3, photosBtn.frame.size.height)];
     [photosBtn addTarget:self action:@selector(showPhotos:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *showPhotos = [[UIBarButtonItem alloc] initWithCustomView:photosBtn];
-    
-    NSArray *buttonItems = [NSArray arrayWithObjects:addToFavorites, showMap, showPhotos, nil];
+    */
+    NSArray *buttonItems = [NSArray arrayWithObjects:addToFavorites, showMap, nil];
     [toolbar setItems:buttonItems];
     
     [headerView addSubview:imageView];
