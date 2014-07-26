@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     UIColor* barColor = [UIColor colorWithRed:255.0/255.0 green:144.0/255.0 blue:66.0/255.0 alpha:0.9f];
-   
+    
     if ([Util isVersion7])
     {
         [self.navigationController.navigationBar setBarTintColor:barColor];
@@ -111,6 +111,7 @@
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     headerView = [[UIView alloc] init];
+    [headerView setBackgroundColor:[UIColor lightGrayColor]];
     
     CGFloat width = self.view.frame.size.width;
 
