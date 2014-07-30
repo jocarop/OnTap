@@ -111,32 +111,30 @@
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     headerView = [[UIView alloc] init];
-    [headerView setBackgroundColor:[UIColor lightGrayColor]];
     
     CGFloat width = self.view.frame.size.width;
 
-    UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, 134)];
+    UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, 164)];
     imageView.image = _detailItem.imagen;
-    //imageView.alpha = 0.7f;
     
-    UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 65, width, 25)];
+    UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 90, width, 25)];
     titleLabel.text = _detailItem.nombre;
-    titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20.0];
+    titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:22.0];
     titleLabel.opaque = YES;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.shadowColor = [UIColor blackColor];
     titleLabel.shadowOffset = CGSizeMake(1, 1);
 
-    UILabel* detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 85, width, 15)];
+    UILabel* detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 110, width, 15)];
     detailLabel.text = _detailItem.tipo;
-    detailLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0];
+    detailLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
     detailLabel.backgroundColor = [UIColor clearColor];
     detailLabel.textColor = [UIColor whiteColor];
-    detailLabel.shadowColor = [UIColor grayColor];
+    detailLabel.shadowColor = [UIColor blackColor];
     detailLabel.shadowOffset = CGSizeMake(1, 1);
     
-    UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 100, width, 34)];
+    UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 130, width, 34)];
     toolbar.alpha = 0.7f;
     
     if ([Util isVersion7])
@@ -206,9 +204,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if ([Util isVersion7])
-        return 134.0f;
+        return 164.0f;
     else
-        return 144.0f;
+        return 174.0f;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -217,14 +215,15 @@
     
     CGFloat width = self.view.frame.size.width;
     
-    UILabel* onTapLink = [[UILabel alloc] initWithFrame:CGRectMake(0, 54, width, 44)];
+    UILabel* onTapLink = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, width, 44)];
     onTapLink.text = @"wwww.ontap.com.mx";
-    onTapLink.font = [UIFont fontWithName:@"System" size:15.0];
+    onTapLink.font = [UIFont fontWithName:@"Helvetica" size:12.0];
     onTapLink.textColor = [UIColor lightGrayColor];
     onTapLink.textAlignment = NSTextAlignmentCenter;
     onTapLink.backgroundColor = [UIColor clearColor];
 
     [footerView addSubview:onTapLink];
+    [footerView sizeToFit];
 
     return footerView;
 }
