@@ -50,7 +50,9 @@
     self.mapView.showsUserLocation = YES;
     
     if (annotation != nil)
+    {
         [self.mapView addAnnotation:annotation];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
@@ -61,6 +63,11 @@
     MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, span);
     
     self.mapView.region = region;
+}
+
+- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
+{
+    [self.mapView selectAnnotation:[[self.mapView annotations] firstObject] animated:YES];
 }
 
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar
