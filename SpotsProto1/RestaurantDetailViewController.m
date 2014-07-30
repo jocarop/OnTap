@@ -307,7 +307,8 @@
         }
         else if (indexPath.row == 4)
         {
-            //open webpage
+            NSString* url = [NSString stringWithFormat:@"http://%@", _detailItem.pagina];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
     }
     
