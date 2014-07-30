@@ -114,7 +114,16 @@
     CGFloat width = self.view.frame.size.width;
 
     UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, 164)];
-    imageView.image = _detailItem.imagen;
+    
+    if (_detailItem.tieneImagen)
+    {
+        imageView.image = _detailItem.imagen;
+    }
+    else
+    {
+        UIImage* image = [UIImage imageNamed:@"ontap.png"];
+        imageView.image = image;
+    }
     
     UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 90, width, 25)];
     titleLabel.text = _detailItem.nombre;

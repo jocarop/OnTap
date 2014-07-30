@@ -59,6 +59,7 @@
 		EF3E82CA195ABA4900784331 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C7195ABA4900784331 /* AppIcon29x29.png */; };
 		EF3E82CB195ABA4900784331 /* AppIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C8195ABA4900784331 /* AppIcon58x58.png */; };
 		EF3E82CC195ABA4900784331 /* AppIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C9195ABA4900784331 /* AppIcon80x80.png */; };
+		EF4EFBB91988C66F0083F654 /* ontap.png in Resources */ = {isa = PBXBuildFile; fileRef = EF4EFBB81988C66F0083F654 /* ontap.png */; };
 		EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */; };
 		EF6E833219833F7B00EAB5D7 /* ver-mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E833119833F7B00EAB5D7 /* ver-mapa.png */; };
 		EF6E83381983402A00EAB5D7 /* ver-fotos.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E83371983402A00EAB5D7 /* ver-fotos.png */; };
@@ -176,6 +177,7 @@
 		EF3E82C7195ABA4900784331 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		EF3E82C8195ABA4900784331 /* AppIcon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon58x58.png; sourceTree = "<group>"; };
 		EF3E82C9195ABA4900784331 /* AppIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80x80.png; sourceTree = "<group>"; };
+		EF4EFBB81988C66F0083F654 /* ontap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ontap.png; sourceTree = "<group>"; };
 		EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantAnnotation.h; path = ../RestaurantAnnotation.h; sourceTree = "<group>"; };
 		EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantAnnotation.m; path = ../RestaurantAnnotation.m; sourceTree = "<group>"; };
 		EF6E833119833F7B00EAB5D7 /* ver-mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-mapa.png"; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		EF37BAC81935592C00A1373E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF4EFBB81988C66F0083F654 /* ontap.png */,
 				EF6E83391983407A00EAB5D7 /* favoritos.png */,
 				EF6E83371983402A00EAB5D7 /* ver-fotos.png */,
 				EF6E833119833F7B00EAB5D7 /* ver-mapa.png */,
@@ -695,6 +698,7 @@
 				EF062D921967200D00E1EA0A /* NotificationButtonBackground@2x.png in Resources */,
 				EF062D7B1967200D00E1EA0A /* .gitignore in Resources */,
 				EF8001CF1965FA120079FC95 /* favorite_selected@2x.png in Resources */,
+				EF4EFBB91988C66F0083F654 /* ontap.png in Resources */,
 				EF062D8D1967200D00E1EA0A /* NotificationBackgroundWarning.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
