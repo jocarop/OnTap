@@ -18,15 +18,6 @@
 
 @synthesize annotation;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -64,9 +55,6 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    if (userLocation.location.horizontalAccuracy > 50)
-        return;
-    
     CLLocationDegrees latDelta = userLocation.coordinate.latitude - annotation.coordinate.latitude;
     MKCoordinateSpan span = MKCoordinateSpanMake(fabsf(latDelta*3),0.0);
     

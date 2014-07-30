@@ -13,7 +13,6 @@
 #import "MBProgressHUD.h"
 #import "Util.h"
 #import "RestaurantAnnotation.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation RestaurantDetailViewController
 {
