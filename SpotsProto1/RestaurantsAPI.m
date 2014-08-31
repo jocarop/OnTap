@@ -13,6 +13,7 @@
 @interface RestaurantsAPI ()
 {
     NSMutableArray* restaurants;
+    NSMutableArray* nearbyRestaurants;
     NSMutableDictionary* restaurantsAlphabetically;
     NSArray* alphaKeys;
     NSMutableDictionary* restaurantsByType;
@@ -36,6 +37,24 @@
     });
     
     return _sharedInstance;
+}
+
+- (BOOL)isCityInCatalogue:(CLPlacemark *)placemark
+{
+    self.placemark = placemark;
+    NSString* ciudad = placemark.locality;
+
+    if ([ciudad isEqual:@"Cupertino"])
+        ciudad = @"Sunnyvale";
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query whereKey:@"ciudad" equalTo:ciudad];
+    NSInteger count = [query countObjects];
+    
+    if (count > 0)
+        return YES;
+    
+    return NO;
 }
 
 - (BOOL)loadRestaurants:(CLPlacemark*)placemark
@@ -99,6 +118,33 @@
     typeKeys = [unsortedKeys sortedArrayUsingSelector:@selector(compare:)];
     
     return YES;
+}
+
+- (BOOL)loadRestaurantsNearLocation:(CLLocation*)location
+{
+    PFGeoPoint* geoPoint = [PFGeoPoint geoPointWithLocation:location];
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query whereKey:@"geolocation" nearGeoPoint:geoPoint withinKilometers:1.0f];
+    
+    NSArray* nearRestaurantsArray = [query findObjects];
+    
+    if ([nearRestaurantsArray count] == 0)
+        return NO;
+    
+    nearbyRestaurants = [NSMutableArray array];
+    
+    for (PFObject* object in nearRestaurantsArray)
+    {
+        Restaurant* restaurant = [[Restaurant alloc] initWithPFObject:object];
+        [nearbyRestaurants addObject:restaurant];
+    }
+    
+    return YES;
+}
+
+- (NSMutableArray*)getNearbyRestaurants
+{
+    return nearbyRestaurants;
 }
 
 - (NSMutableArray*)getAllRestaurants

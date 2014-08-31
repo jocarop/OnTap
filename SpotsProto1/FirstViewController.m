@@ -138,7 +138,9 @@
     locationManager =  nil;
     
     CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-    [geoCoder reverseGeocodeLocation:[locations lastObject] completionHandler:^(NSArray *placemarks, NSError *error) {
+    CLLocation* location = [locations lastObject];
+    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        
         if ([placemarks count] > 0 && error == nil)
         {
             hud.labelText = @"Cargando:";
@@ -146,7 +148,6 @@
             dispatch_queue_t downloadQueue = dispatch_queue_create("loadData", NULL);
             dispatch_async(downloadQueue, ^{
                 
-                // do our long running process here
                 CLPlacemark* placemark = [placemarks objectAtIndex:0];
                 NSString* postalCode = (placemark.postalCode != nil) ? placemark.postalCode : @"00000";
                 
@@ -157,41 +158,39 @@
                                                           }];
                 
                 RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
-                bool data = [api loadRestaurants:placemark];
+                BOOL cityOK = [api isCityInCatalogue:placemark];
                 
-                /*dispatch_queue_t downloadQueue = dispatch_queue_create("loadSucursales", NULL);
-                dispatch_async(downloadQueue, ^{
+                if (!cityOK)
+                {
+                    [TSMessage showNotificationInViewController:[TSMessage defaultViewController]
+                                                          title:@"No Hay Resultados"
+                                                       subtitle:@"No contamos con servicio en tu ciudad. Hemos recibido tu solicitud y estaremos agregando esta ciudad pronto. Síguenos en Facebook para estar enterado de las actualizaciones a nuestro catalogo."
+                                                           type:TSMessageNotificationTypeMessage
+                                                       duration:TSMessageNotificationDurationEndless
+                                           canBeDismissedByUser:NO];
                     
-                    RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
-                    [api getRestaurantDetails];
-                });*/
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.tabBar.userInteractionEnabled = NO;
+                    [locationManager startUpdatingLocation];
                     
-                        if (data)
-                        {
-                            UINavigationController* navController = (UINavigationController*)self.selectedViewController;
-                            UITableViewController* viewController = (UITableViewController*)[navController visibleViewController];
-                            [viewController.navigationItem setTitle:placemark.locality];
-                            [viewController.tableView reloadData];
-                        }
-                        else
-                        {
-                            [TSMessage showNotificationInViewController:[TSMessage defaultViewController]
-                                                                  title:@"No Hay Resultados"
-                                                               subtitle:@"No contamos con servicio en tu ciudad. Hemos recibido tu solicitud y estaremos agregando esta ciudad pronto. Síguenos en Facebook para estar enterado de las actualizaciones a nuestro directorio."
-                                                                   type:TSMessageNotificationTypeMessage
-                                                               duration:TSMessageNotificationDurationEndless
-                                                   canBeDismissedByUser:NO];
-                            
-                            self.tabBar.userInteractionEnabled = NO;
-                            [locationManager startUpdatingLocation];
-                        }
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                }
+                else
+                {
+                    [api loadRestaurantsNearLocation:location];
                     
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        UINavigationController* navController = (UINavigationController*)self.selectedViewController;
+                        UITableViewController* viewController = (UITableViewController*)[navController visibleViewController];
+                        [viewController.navigationItem setTitle:placemark.locality];
+                        [viewController.tableView reloadData];
+                        
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                     });
+                }
             });
         }
+        
         else if (error)
         {
             [TSMessage showNotificationInViewController:[TSMessage defaultViewController]
