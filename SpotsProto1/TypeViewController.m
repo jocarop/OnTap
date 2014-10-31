@@ -10,6 +10,8 @@
 #import "RestaurantsAPI.h"
 #import "Util.h"
 #import "Mixpanel.h"
+#import "RestaurantTypeCell.h"
+#import "RestaurantDetailViewController.h"
 
 @interface TypeViewController ()
 
@@ -17,20 +19,28 @@
 
 @implementation TypeViewController
 
-- (void)awakeFromNib
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    [super awakeFromNib];
+    self = [super initWithCoder:aDecoder];
     
-    self.parseClassName = @"RestaurantType";
-    self.pullToRefreshEnabled = YES;
-    self.paginationEnabled = YES;
-    self.objectsPerPage = 25;
-    
+    if (self)
+    {
+        self.parseClassName = @"RestaurantType";
+        self.textKey = @"text";
+        self.imageKey = @"image";
+        self.pullToRefreshEnabled = YES;
+        self.paginationEnabled = YES;
+        self.objectsPerPage = 25;
+    }
+
     UIImage *iconType = [UIImage imageNamed:@"type.png"];
     UIImage *selectedIconType = [UIImage imageNamed:@"type_selected.png"];
     
     [self.navigationController.tabBarItem setImage:iconType];
     [self.navigationController.tabBarItem setSelectedImage:selectedIconType];
+    
+    return self;
 }
 
 - (void)viewDidLoad
@@ -63,7 +73,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (PFQuery *)queryForTable
@@ -79,17 +88,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    static NSString *cellIdentifier = @"Cell";
+    static NSString *cellIdentifier = @"TypeCell";
     
-    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell)
-        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    
-    cell.textLabel.text = object[@"type"];
-    
-    PFFile *thumbnail = object[@"image"];
-    cell.imageView.file = thumbnail;
+    RestaurantTypeCell* cell = (RestaurantTypeCell*)[self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
+    if (!cell)
+        cell = [[RestaurantTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    
+    cell.theLabel.text = object[@"type"];
+    PFFile *thumbnail = object[@"image"];
+    
+    cell.theImageView.image = [UIImage imageNamed:@"AppIcon58x58.png"];
+    cell.theImageView.file = thumbnail;
+
+    [cell.theImageView loadInBackground];
+    
     return cell;
 }
 

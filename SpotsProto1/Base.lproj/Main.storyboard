@@ -170,34 +170,44 @@
         <scene sceneID="8ld-yq-po9">
             <objects>
                 <tableViewController title="Master" id="sQ6-eO-GV8" customClass="TypeViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YnG-xj-kic">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="YnG-xj-kic">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Eic-sR-2e0" customClass="PFTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TypeCell" rowHeight="200" id="Eic-sR-2e0" customClass="RestaurantTypeCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eic-sR-2e0" id="lri-n9-Hxj">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nDH-fO-YmW">
-                                            <rect key="frame" x="0.0" y="130" width="287" height="43"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dZJ-Ih-iuD" customClass="PFImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="197"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xQI-5W-qYx">
+                                            <rect key="frame" x="7" y="4" width="232" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="theImageView" destination="dZJ-Ih-iuD" id="7vT-Of-6e1"/>
+                                    <outlet property="theLabel" destination="xQI-5W-qYx" id="36t-25-P8m"/>
                                     <segue destination="G4K-9c-YZT" kind="push" identifier="showDetail" id="KbH-TX-j8n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="sQ6-eO-GV8" id="bR9-x0-F1a"/>
-                            <outlet property="delegate" destination="sQ6-eO-GV8" id="PYz-vW-jGv"/>
+                            <outlet property="delegate" destination="sQ6-eO-GV8" id="jOA-RF-pbR"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="WjF-Rf-GO0"/>
