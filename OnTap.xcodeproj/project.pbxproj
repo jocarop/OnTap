@@ -60,6 +60,7 @@
 		EF3E82CB195ABA4900784331 /* AppIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C8195ABA4900784331 /* AppIcon58x58.png */; };
 		EF3E82CC195ABA4900784331 /* AppIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82C9195ABA4900784331 /* AppIcon80x80.png */; };
 		EF4EFBB91988C66F0083F654 /* ontap.png in Resources */ = {isa = PBXBuildFile; fileRef = EF4EFBB81988C66F0083F654 /* ontap.png */; };
+		EF58360B1A044BE200AFE8FC /* TypeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF58360A1A044BE200AFE8FC /* TypeListViewController.m */; };
 		EF63DFB619B2EF7A0011BE2A /* TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF63DFB519B2EF7A0011BE2A /* TypeViewController.m */; };
 		EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */; };
 		EF6E833219833F7B00EAB5D7 /* ver-mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E833119833F7B00EAB5D7 /* ver-mapa.png */; };
@@ -184,6 +185,8 @@
 		EF3E82C8195ABA4900784331 /* AppIcon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon58x58.png; sourceTree = "<group>"; };
 		EF3E82C9195ABA4900784331 /* AppIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon80x80.png; sourceTree = "<group>"; };
 		EF4EFBB81988C66F0083F654 /* ontap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ontap.png; sourceTree = "<group>"; };
+		EF5836091A044BE200AFE8FC /* TypeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeListViewController.h; sourceTree = "<group>"; };
+		EF58360A1A044BE200AFE8FC /* TypeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeListViewController.m; sourceTree = "<group>"; };
 		EF63DFB419B2EF7A0011BE2A /* TypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeViewController.h; sourceTree = "<group>"; };
 		EF63DFB519B2EF7A0011BE2A /* TypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeViewController.m; sourceTree = "<group>"; };
 		EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantAnnotation.h; path = ../RestaurantAnnotation.h; sourceTree = "<group>"; };
@@ -487,6 +490,8 @@
 				EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */,
 				EF63DFB419B2EF7A0011BE2A /* TypeViewController.h */,
 				EF63DFB519B2EF7A0011BE2A /* TypeViewController.m */,
+				EF5836091A044BE200AFE8FC /* TypeListViewController.h */,
+				EF58360A1A044BE200AFE8FC /* TypeListViewController.m */,
 				EFF2268B197F5983007A5A3B /* MapViewController.h */,
 				EFF2268C197F5983007A5A3B /* MapViewController.m */,
 				EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */,
@@ -743,6 +748,7 @@
 				EF2D50EF194F5BCD0075EFE9 /* RestaurantsAPI.m in Sources */,
 				EFF43F0419429D7800A62E4B /* NSData+MPBase64.m in Sources */,
 				EFF43F0319429D7800A62E4B /* MPCSerializedJSONData.m in Sources */,
+				EF58360B1A044BE200AFE8FC /* TypeListViewController.m in Sources */,
 				EFF43F0519429D7800A62E4B /* ODIN.m in Sources */,
 				EF2D50F5194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m in Sources */,
 				EFBC57B31932BF8A007A9C80 /* AppDelegate.m in Sources */,

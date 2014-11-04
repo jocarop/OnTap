@@ -2,7 +2,7 @@
 //  TypeViewController.m
 //  OnTap
 //
-//  Created by Andrea Martinez de Castro on 30/08/14.
+//  Created by Jose Carlos Rodriguez on 30/08/14.
 //  Copyright (c) 2014 Appvertising. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 #import "Util.h"
 #import "Mixpanel.h"
 #import "RestaurantTypeCell.h"
-#import "RestaurantDetailViewController.h"
+#import "TypeListViewController.h"
 
 @interface TypeViewController ()
 
@@ -27,7 +27,7 @@
     if (self)
     {
         self.parseClassName = @"RestaurantType";
-        self.textKey = @"text";
+        self.textKey = @"type";
         self.imageKey = @"image";
         self.pullToRefreshEnabled = YES;
         self.paginationEnabled = YES;
@@ -65,9 +65,6 @@
         [self.navigationController.navigationBar setTintColor:barColor];
         [self.navigationController.navigationBar setTranslucent:NO];
     }
-    
-    Mixpanel* mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"Lista Por Tipo"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,6 +101,17 @@
     [cell.theImageView loadInBackground];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
+    PFObject* selectedType = [self.objects objectAtIndex:indexPath.row];
+    
+    if ([[segue identifier] isEqualToString:@"showRestaurants"])
+    {
+        [[segue destinationViewController] setRestaurantType:selectedType];
+    }
 }
 
 @end

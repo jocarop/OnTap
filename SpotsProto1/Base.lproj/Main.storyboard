@@ -113,7 +113,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3K-ye-ri6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2152" y="1013"/>
+            <point key="canvasLocation" x="2720" y="64"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="qfh-El-g0r">
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tM1-5N-b4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2611" y="1008"/>
+            <point key="canvasLocation" x="3167" y="64"/>
         </scene>
         <!--Navigation Controller - Explora-->
         <scene sceneID="Lwm-BF-dzs">
@@ -201,7 +201,7 @@
                                 <connections>
                                     <outlet property="theImageView" destination="dZJ-Ih-iuD" id="7vT-Of-6e1"/>
                                     <outlet property="theLabel" destination="xQI-5W-qYx" id="36t-25-P8m"/>
-                                    <segue destination="G4K-9c-YZT" kind="push" identifier="showDetail" id="KbH-TX-j8n"/>
+                                    <segue destination="vu2-G2-3Bv" kind="push" identifier="showRestaurants" id="Lay-Fa-ZeP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -214,7 +214,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmz-4v-XYD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525" y="1008"/>
+            <point key="canvasLocation" x="1527" y="1014"/>
+        </scene>
+        <!--Type List View Controller-->
+        <scene sceneID="KOs-bm-XMy">
+            <objects>
+                <tableViewController id="vu2-G2-3Bv" customClass="TypeListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tvl-Ti-vcV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantCell" id="Zbt-Ea-1Cl">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zbt-Ea-1Cl" id="Qxi-g1-Her">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="G4K-9c-YZT" kind="push" identifier="showDetail" id="IUx-MK-Tgf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vu2-G2-3Bv" id="8jg-Ok-sNY"/>
+                            <outlet property="delegate" destination="vu2-G2-3Bv" id="W56-Yf-orK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="GGe-w3-F9U"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bD-Oe-9MS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2180" y="1014"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="WDq-4n-dHT">
@@ -302,6 +334,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KbH-TX-j8n"/>
+        <segue reference="IUx-MK-Tgf"/>
     </inferredMetricsTieBreakers>
 </document>
