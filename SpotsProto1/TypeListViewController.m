@@ -131,9 +131,8 @@
     {
         NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
         PFObject* object = [self.objects objectAtIndex:indexPath.row];
-        Restaurant* restaurant = [[Restaurant alloc] initWithPFObject:object];
         
-        [[segue destinationViewController] setDetailItem:restaurant];
+        [[segue destinationViewController] setRestaurantObj:object];
         [[segue destinationViewController] setParentView:@"Explora"];
     }
 }

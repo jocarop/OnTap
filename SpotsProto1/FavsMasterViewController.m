@@ -123,7 +123,7 @@
         Restaurant* restaurant =[favorites objectAtIndex:indexPath.row];
         
         [[segue destinationViewController] setParentView:@"Favoritos"];
-        [[segue destinationViewController] setDetailItem:restaurant];
+        //[[segue destinationViewController] setDetailItem:restaurant];
     }
 }
 

@@ -95,7 +95,6 @@
 		EFBC57C71932BF8A007A9C80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC57A61932BF8A007A9C80 /* UIKit.framework */; };
 		EFBC57CF1932BF8A007A9C80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFBC57CD1932BF8A007A9C80 /* InfoPlist.strings */; };
 		EFBC57D11932BF8A007A9C80 /* SpotsProto1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57D01932BF8A007A9C80 /* SpotsProto1Tests.m */; };
-		EFBC57E01932CD04007A9C80 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57DF1932CD04007A9C80 /* Restaurant.m */; };
 		EFF2268D197F5983007A5A3B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF2268C197F5983007A5A3B /* MapViewController.m */; };
 		EFF2268F197F59AE007A5A3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF2268E197F59AE007A5A3B /* MapKit.framework */; };
 		EFF43F0119429D7800A62E4B /* MPCJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43EF419429D7800A62E4B /* MPCJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -226,8 +225,6 @@
 		EFBC57CC1932BF8A007A9C80 /* OnTapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OnTapTests-Info.plist"; sourceTree = "<group>"; };
 		EFBC57CE1932BF8A007A9C80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFBC57D01932BF8A007A9C80 /* SpotsProto1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotsProto1Tests.m; sourceTree = "<group>"; };
-		EFBC57DE1932CD04007A9C80 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
-		EFBC57DF1932CD04007A9C80 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		EFF2268B197F5983007A5A3B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		EFF2268C197F5983007A5A3B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		EFF2268E197F59AE007A5A3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -483,8 +480,6 @@
 				EFF2268C197F5983007A5A3B /* MapViewController.m */,
 				EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */,
 				EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */,
-				EFBC57DE1932CD04007A9C80 /* Restaurant.h */,
-				EFBC57DF1932CD04007A9C80 /* Restaurant.m */,
 				EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */,
 				EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */,
 				EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */,
@@ -738,7 +733,6 @@
 				EFBC57B31932BF8A007A9C80 /* AppDelegate.m in Sources */,
 				EF062D951967200D00E1EA0A /* TSMessageView.m in Sources */,
 				EF062D941967200D00E1EA0A /* TSBlurView.m in Sources */,
-				EFBC57E01932CD04007A9C80 /* Restaurant.m in Sources */,
 				EF062D821967200D00E1EA0A /* TSMessage.m in Sources */,
 				EF062D521967170A00E1EA0A /* MBProgressHUD.m in Sources */,
 				EF7B848A1966541300B33B1A /* FirstViewController.m in Sources */,

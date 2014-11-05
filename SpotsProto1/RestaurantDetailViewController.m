@@ -20,14 +20,7 @@
 }
 
 @synthesize parentView;
-
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem)
-    {
-        _detailItem = newDetailItem;
-    }
-}
+@synthesize restaurantObj;
 
 - (void)viewDidLoad
 {
@@ -46,47 +39,6 @@
         [self.navigationController.navigationBar setTranslucent:NO];
     }
     
-    if (_detailItem.tieneSucursales && [_detailItem.sucursales count] == 0)
-    {
-        MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"Cargando datos";
-        
-        dispatch_queue_t downloadQueue = dispatch_queue_create("loadDetails", NULL);
-        dispatch_async(downloadQueue, ^{
-        
-            [[RestaurantsAPI sharedInstance] getRestaurantDetails:_detailItem];
-        
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            });
-        
-        });
-    }
-    
-    if (_detailItem.tieneImagen && _detailItem.imagen == nil)
-    {
-        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        spinner.center = CGPointMake(160, 45);
-        spinner.hidesWhenStopped = YES;
-        [headerView addSubview:spinner];
-        [spinner startAnimating];
-        
-        dispatch_queue_t downloadQueue = dispatch_queue_create("downloadImage", NULL);
-        dispatch_async(downloadQueue, ^{
-            
-            [[RestaurantsAPI sharedInstance] getRestaurantImage:_detailItem];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIImageView* imageView = [headerView.subviews objectAtIndex:0];
-                imageView.image = _detailItem.imagen;
-                //imageView.alpha = 0.9f;
-                [spinner stopAnimating];
-            });
-            
-        });
-    }
-
     [super viewDidLoad];
 }
 
@@ -97,9 +49,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_detailItem.tieneSucursales)
+    if ([restaurantObj[@"tieneSucursales"] boolValue])
     {
-        return [_detailItem.sucursales count];
+        NSInteger count = [restaurantObj[@"sucursales"] count];
+        return count;
     }
     else
     {
@@ -113,20 +66,17 @@
     
     CGFloat width = self.view.frame.size.width;
 
-    UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, 164)];
+    PFImageView* imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, width, 164)];
     
-    if (_detailItem.tieneImagen)
-    {
-        imageView.image = _detailItem.imagen;
-    }
-    else
-    {
-        UIImage* image = [UIImage imageNamed:@"ontap.png"];
-        imageView.image = image;
-    }
+    PFFile *thumbnail = restaurantObj[@"imagen"];
     
+    imageView.image = [UIImage imageNamed:@"ontap.png"];
+    imageView.file = thumbnail;
+    
+    [imageView loadInBackground];
+
     UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 90, width, 25)];
-    titleLabel.text = _detailItem.nombre;
+    titleLabel.text = restaurantObj[@"nombre"];
     titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:22.0];
     titleLabel.opaque = YES;
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -135,7 +85,7 @@
     titleLabel.shadowOffset = CGSizeMake(1, 1);
 
     UILabel* detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 110, width, 15)];
-    detailLabel.text = _detailItem.tipo;
+    detailLabel.text = restaurantObj[@"tipo"];
     detailLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
     detailLabel.backgroundColor = [UIColor clearColor];
     detailLabel.textColor = [UIColor whiteColor];
@@ -241,12 +191,14 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     NSString* text = @"Telefono";
-    NSString* detail = _detailItem.telefono;
+    NSString* detail = restaurantObj[@"telefono"];
     
-    if (_detailItem.tieneSucursales)
+    BOOL tieneSucursales = [restaurantObj[@"tieneSucursales"] boolValue];
+    
+    if (tieneSucursales)
     {
-        text = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"sucursal"];
-        detail = [[_detailItem.sucursales objectAtIndex:indexPath.row] objectForKey:@"telefono"];
+        text = [[restaurantObj[@"sucursales"] objectAtIndex:indexPath.row] objectForKey:@"sucursal"];
+        detail = [[restaurantObj[@"sucursales"] objectAtIndex:indexPath.row] objectForKey:@"telefono"];
     }
     
     NSString* formattedPhoneNumber = [NSString stringWithFormat:@"(%@) %@-%@", [detail substringWithRange:NSMakeRange(0, 3)], [detail substringWithRange:NSMakeRange(3, 3)], [detail substringWithRange:NSMakeRange(6, 4)]];
@@ -254,30 +206,30 @@
     cell.textLabel.text = text;
     cell.detailTextLabel.text = formattedPhoneNumber;
     
-    if (indexPath.row == 1 && !_detailItem.tieneSucursales)
+    if (indexPath.row == 1 && !tieneSucursales)
     {
         cell.textLabel.text = @"Dirección";
-        cell.detailTextLabel.text = _detailItem.direccion;
+        cell.detailTextLabel.text = restaurantObj[@"direccion"];
         cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.detailTextLabel.numberOfLines = 0;
     }
     
-    if (indexPath.row == 2 && !_detailItem.tieneSucursales)
+    if (indexPath.row == 2 && !tieneSucursales)
     {
         cell.textLabel.text = @"Horario";
-        cell.detailTextLabel.text = _detailItem.horario;
+        cell.detailTextLabel.text = restaurantObj[@"horario"];
     }
     
-    if (indexPath.row == 3 && !_detailItem.tieneSucursales)
+    if (indexPath.row == 3 && !tieneSucursales)
     {
         cell.textLabel.text = @"Precio";
-        cell.detailTextLabel.text = _detailItem.precio;
+        cell.detailTextLabel.text = restaurantObj[@"precio"];
     }
     
-    if (indexPath.row == 4 && !_detailItem.tieneSucursales)
+    if (indexPath.row == 4 && !tieneSucursales)
     {
         cell.textLabel.text = @"Página";
-        cell.detailTextLabel.text = _detailItem.pagina;
+        cell.detailTextLabel.text = restaurantObj[@"pagina"];
     }
     
     return cell;
@@ -285,9 +237,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_detailItem.direccion != nil && indexPath.row == 1)
+    if (restaurantObj[@"direccion"] != nil && indexPath.row == 1)
     {
-        NSString *cellText = _detailItem.direccion;
+        NSString *cellText = restaurantObj[@"direccion"];
         UIFont *cellFont = [UIFont systemFontOfSize:17];
         CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
         CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
@@ -304,7 +256,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_detailItem.tieneSucursales)
+    if ([restaurantObj[@"tieneSucursales"] boolValue])
     {
         [self makePhoneCall:indexPath.row];
     }
@@ -316,7 +268,7 @@
         }
         else if (indexPath.row == 4)
         {
-            NSString* url = [NSString stringWithFormat:@"http://%@", _detailItem.pagina];
+            NSString* url = [NSString stringWithFormat:@"http://%@", restaurantObj[@"pagina"]];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
     }
@@ -326,22 +278,22 @@
 
 - (void)makePhoneCall:(NSUInteger)index
 {
-    NSString* telefono = _detailItem.telefono;
-    if (_detailItem.tieneSucursales)
+    NSString* telefono = restaurantObj[@"telefono"];
+    if ([restaurantObj[@"tieneSucursales"] boolValue])
     {
-        telefono = [[_detailItem.sucursales objectAtIndex:index] objectForKey:@"telefono"];
+        telefono = [[restaurantObj[@"sucursales"] objectAtIndex:index] objectForKey:@"telefono"];
     }
     
     NSString* sucursal = @"";
-    if (_detailItem.tieneSucursales)
+    if ([restaurantObj[@"tieneSucursales"] boolValue])
     {
-        sucursal = [[_detailItem.sucursales objectAtIndex:index] objectForKey:@"sucursal"];
+        sucursal = [[restaurantObj[@"sucursales"] objectAtIndex:index] objectForKey:@"sucursal"];
     }
     
     Mixpanel* mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Llamada" properties:@{
-                                            @"id": _detailItem.objectId,
-                                            @"nombre": _detailItem.nombre,
+                                            @"id": restaurantObj.objectId,
+                                            @"nombre": restaurantObj[@"nombre"],
                                             @"sucursal": sucursal,
                                             @"vista": parentView
                                             }];
@@ -353,15 +305,15 @@
 - (IBAction)addToFavorites:(UIButton*)sender
 {
     RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
-    [api addFavoriteRestaurant:_detailItem.objectId];
+    [api addFavoriteRestaurant:restaurantObj.objectId];
 }
 
 - (IBAction)showMap:(UIButton*)sender
 {
     Mixpanel* mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Mapa visto" properties:@{
-                                            @"id": _detailItem.objectId,
-                                            @"nombre": _detailItem.nombre,
+                                            @"id": restaurantObj.objectId,
+                                            @"nombre": restaurantObj[@"nombre"],
                                             }];
     
     [self performSegueWithIdentifier: @"showMap" sender:self];
@@ -377,9 +329,11 @@
     if ([[segue identifier] isEqualToString:@"showMap"])
     {
         RestaurantAnnotation* annotation = [[RestaurantAnnotation alloc] init];
-        annotation.coordinate = _detailItem.geolocation;
-        annotation.title = _detailItem.nombre;
-        annotation.subtitle = _detailItem.tipo;
+        PFGeoPoint* geoPoint = restaurantObj[@"geolocation"];
+        CLLocationCoordinate2D geolocation = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+        annotation.coordinate = geolocation;
+        annotation.title = restaurantObj[@"nombre"];
+        annotation.subtitle = restaurantObj[@"tipo"];
         [[segue destinationViewController] setAnnotation:annotation];
     }
 }
