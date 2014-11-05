@@ -56,54 +56,6 @@
     return NO;
 }
 
-- (void)getRestaurantDetails
-{
-    PFQuery* query = [PFQuery queryWithClassName:@"Restaurant"];
-    [query selectKeys:@[@"sucursales"]];
-    [query whereKey:@"ciudad" equalTo:self.placemark.locality];
-    [query whereKey:@"tieneSucursales" equalTo:@YES];
-    query.cachePolicy = kPFCachePolicyNetworkElseCache;
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *sucursales, NSError *error) {
-        if (!error && [sucursales count] > 0)
-        {
-            for (PFObject* object in sucursales)
-            {
-                NSString* id = object.objectId;
-                Restaurant* restaurant = [self findRestaurantBySpotId:id];
-                
-                if ([restaurant.sucursales count] == 0)
-                {
-                    restaurant.sucursales = object[@"sucursales"];
-                }
-            }
-        }
-        
-        
-    }];
-    
-}
-
-- (void)getRestaurantDetails:(Restaurant*)restaurant
-{
-    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
-    [query selectKeys:@[@"sucursales"]];
-    PFObject* object = [query getObjectWithId:restaurant.objectId];
-    
-    restaurant.sucursales = object[@"sucursales"];
-}
-
-- (void)getRestaurantImage:(Restaurant*)restaurant
-{
-    PFQuery* query = [PFQuery queryWithClassName:@"Restaurant"];
-    [query selectKeys:@[@"imagen"]];
-    
-    PFObject* object = [query getObjectWithId:restaurant.objectId];
-    PFFile *imageFile = object[@"imagen"];
-    NSData* imageData = [imageFile getData];
-    restaurant.imagen = [UIImage imageWithData:imageData];
-}
-
 - (void)loadFavoriteRestaurants
 {
     NSMutableArray* favoritesIdList = [[NSUserDefaults standardUserDefaults] objectForKey:@"OnTap_Favorites"];

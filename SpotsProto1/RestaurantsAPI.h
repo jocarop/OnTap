@@ -25,8 +25,5 @@
 - (NSMutableArray*)getFavoriteRestaurants;
 - (void)removeFavoriteRestaurant:(NSInteger)index;
 - (void)addFavoriteRestaurant:(NSString*)objectId;
-- (void)getRestaurantDetails;
-- (void)getRestaurantDetails:(Restaurant*)restaurant;
-- (void)getRestaurantImage:(Restaurant*)restaurant;
 
 @end
