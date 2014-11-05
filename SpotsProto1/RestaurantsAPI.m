@@ -41,7 +41,6 @@
 
 - (BOOL)isCityInCatalogue:(CLPlacemark *)placemark
 {
-    self.placemark = placemark;
     NSString* ciudad = placemark.locality;
 
     if ([ciudad isEqual:@"Cupertino"])

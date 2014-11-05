@@ -46,6 +46,7 @@
 		EF177C171963A62100D72A4F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C161963A62100D72A4F /* StoreKit.framework */; };
 		EF177C191963A62B00D72A4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C181963A62B00D72A4F /* SystemConfiguration.framework */; };
 		EF28A18A1974910800F7008F /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EF28A1891974910800F7008F /* Util.m */; };
+		EF29BB071A099F5E001007A5 /* NearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF29BB061A099F5E001007A5 /* NearViewController.m */; };
 		EF2D50EA194F59D40075EFE9 /* FavsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */; };
 		EF2D50EF194F5BCD0075EFE9 /* RestaurantsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */; };
 		EF2D50F5194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50F4194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m */; };
@@ -167,6 +168,8 @@
 		EF177C181963A62B00D72A4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EF28A1881974910800F7008F /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		EF28A1891974910800F7008F /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		EF29BB051A099F5E001007A5 /* NearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearViewController.h; sourceTree = "<group>"; };
+		EF29BB061A099F5E001007A5 /* NearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearViewController.m; sourceTree = "<group>"; };
 		EF2D50E8194F59D40075EFE9 /* FavsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavsMasterViewController.h; sourceTree = "<group>"; };
 		EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavsMasterViewController.m; sourceTree = "<group>"; };
 		EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsAPI.h; sourceTree = "<group>"; };
@@ -486,6 +489,8 @@
 				EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */,
 				EF0FC9FB19B2A98900FCBE8B /* NearbyViewController.h */,
 				EF0FC9FC19B2A98900FCBE8B /* NearbyViewController.m */,
+				EF29BB051A099F5E001007A5 /* NearViewController.h */,
+				EF29BB061A099F5E001007A5 /* NearViewController.m */,
 				EF2D50E8194F59D40075EFE9 /* FavsMasterViewController.h */,
 				EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */,
 				EF63DFB419B2EF7A0011BE2A /* TypeViewController.h */,
@@ -759,6 +764,7 @@
 				EF062D821967200D00E1EA0A /* TSMessage.m in Sources */,
 				EF062D521967170A00E1EA0A /* MBProgressHUD.m in Sources */,
 				EF7B848A1966541300B33B1A /* FirstViewController.m in Sources */,
+				EF29BB071A099F5E001007A5 /* NearViewController.m in Sources */,
 				EFF43F0219429D7800A62E4B /* MPCJSONSerializer.m in Sources */,
 				EFF2268D197F5983007A5A3B /* MapViewController.m in Sources */,
 				EFBC57B91932BF8A007A9C80 /* AlphaMasterViewController.m in Sources */,

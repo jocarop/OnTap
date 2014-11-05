@@ -57,7 +57,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (CLLocationManager*)locationManager
@@ -68,9 +67,9 @@
     }
     
     locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
-    [locationManager setDelegate:self];
-    self.locationManager.distanceFilter = 1000.0f;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    locationManager.delegate = self;
+    locationManager.distanceFilter = 1000.0f;
     
     return locationManager;
 }
@@ -139,8 +138,8 @@
     
     CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
     CLLocation* location = [locations lastObject];
-    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        
+    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
+    {
         if ([placemarks count] > 0 && error == nil)
         {
             hud.labelText = @"Cargando:";
@@ -158,6 +157,7 @@
                                                           }];
                 
                 RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
+                api.placemark = placemark;
                 BOOL cityOK = [api isCityInCatalogue:placemark];
                 
                 if (!cityOK)
@@ -170,20 +170,18 @@
                                            canBeDismissedByUser:NO];
                     
                     self.tabBar.userInteractionEnabled = NO;
-                    [locationManager startUpdatingLocation];
                     
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                 }
                 else
                 {
-                    [api loadRestaurantsNearLocation:location];
-                    
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
                         UINavigationController* navController = (UINavigationController*)self.selectedViewController;
                         UITableViewController* viewController = (UITableViewController*)[navController visibleViewController];
                         [viewController.navigationItem setTitle:placemark.locality];
-                        [viewController.tableView reloadData];
+                        PFQueryTableViewController* queryViewController = (PFQueryTableViewController*)viewController;
+                        [queryViewController loadObjects];
                         
                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                     });
