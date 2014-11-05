@@ -25,7 +25,6 @@
 @property (nonatomic, strong) NSString* pagina;
 @property (nonatomic, assign) CLLocationCoordinate2D geolocation;
 
-- (id)initFromParseObject:(PFObject*)object;
 - (id)initWithPFObject:(PFObject*)object;
 
 @end

@@ -35,7 +35,6 @@
 		EF062D931967200D00E1EA0A /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = EF062D751967200D00E1EA0A /* TSMessagesDefaultDesign.json */; };
 		EF062D941967200D00E1EA0A /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF062D781967200D00E1EA0A /* TSBlurView.m */; };
 		EF062D951967200D00E1EA0A /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF062D7A1967200D00E1EA0A /* TSMessageView.m */; };
-		EF0FC9FD19B2A98900FCBE8B /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0FC9FC19B2A98900FCBE8B /* NearbyViewController.m */; };
 		EF177C091963A55900D72A4F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C081963A55900D72A4F /* AudioToolbox.framework */; };
 		EF177C0B1963A56E00D72A4F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C0A1963A56E00D72A4F /* CFNetwork.framework */; };
 		EF177C0D1963A57700D72A4F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C0C1963A57700D72A4F /* CoreLocation.framework */; };
@@ -49,7 +48,6 @@
 		EF29BB071A099F5E001007A5 /* NearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF29BB061A099F5E001007A5 /* NearViewController.m */; };
 		EF2D50EA194F59D40075EFE9 /* FavsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */; };
 		EF2D50EF194F5BCD0075EFE9 /* RestaurantsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */; };
-		EF2D50F5194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50F4194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m */; };
 		EF37BACB193561F900A1373E /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */; };
 		EF3E82BE195AB8A900784331 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82BB195AB8A900784331 /* Default-568h@2x.png */; };
 		EF3E82BF195AB8A900784331 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82BC195AB8A900784331 /* Default.png */; };
@@ -91,7 +89,6 @@
 		EFBC57AF1932BF8A007A9C80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57AE1932BF8A007A9C80 /* main.m */; };
 		EFBC57B31932BF8A007A9C80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57B21932BF8A007A9C80 /* AppDelegate.m */; };
 		EFBC57B61932BF8A007A9C80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFBC57B41932BF8A007A9C80 /* Main.storyboard */; };
-		EFBC57B91932BF8A007A9C80 /* AlphaMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57B81932BF8A007A9C80 /* AlphaMasterViewController.m */; };
 		EFBC57BE1932BF8A007A9C80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFBC57BD1932BF8A007A9C80 /* Images.xcassets */; };
 		EFBC57C51932BF8A007A9C80 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC57C41932BF8A007A9C80 /* XCTest.framework */; };
 		EFBC57C61932BF8A007A9C80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC57A21932BF8A007A9C80 /* Foundation.framework */; };
@@ -101,7 +98,6 @@
 		EFBC57E01932CD04007A9C80 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC57DF1932CD04007A9C80 /* Restaurant.m */; };
 		EFF2268D197F5983007A5A3B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF2268C197F5983007A5A3B /* MapViewController.m */; };
 		EFF2268F197F59AE007A5A3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF2268E197F59AE007A5A3B /* MapKit.framework */; };
-		EFF43ED3194289B600A62E4B /* TypeMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */; };
 		EFF43F0119429D7800A62E4B /* MPCJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43EF419429D7800A62E4B /* MPCJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EFF43F0219429D7800A62E4B /* MPCJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43EF619429D7800A62E4B /* MPCJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EFF43F0319429D7800A62E4B /* MPCSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF43EF819429D7800A62E4B /* MPCSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -154,8 +150,6 @@
 		EF062D781967200D00E1EA0A /* TSBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSBlurView.m; sourceTree = "<group>"; };
 		EF062D791967200D00E1EA0A /* TSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessageView.h; sourceTree = "<group>"; };
 		EF062D7A1967200D00E1EA0A /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
-		EF0FC9FB19B2A98900FCBE8B /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
-		EF0FC9FC19B2A98900FCBE8B /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		EF0FC9FE19B2AD6800FCBE8B /* Tucson.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tucson.gpx; sourceTree = "<group>"; };
 		EF177C081963A55900D72A4F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF177C0A1963A56E00D72A4F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -174,8 +168,6 @@
 		EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavsMasterViewController.m; sourceTree = "<group>"; };
 		EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsAPI.h; sourceTree = "<group>"; };
 		EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsAPI.m; sourceTree = "<group>"; };
-		EF2D50F3194F8B3F0075EFE9 /* Restaurant+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Restaurant+TableRepresentation.h"; sourceTree = "<group>"; };
-		EF2D50F4194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Restaurant+TableRepresentation.m"; sourceTree = "<group>"; };
 		EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
 		EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
 		EF3E82BB195AB8A900784331 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -228,8 +220,6 @@
 		EFBC57B11932BF8A007A9C80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EFBC57B21932BF8A007A9C80 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EFBC57B51932BF8A007A9C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EFBC57B71932BF8A007A9C80 /* AlphaMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaMasterViewController.h; sourceTree = "<group>"; };
-		EFBC57B81932BF8A007A9C80 /* AlphaMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlphaMasterViewController.m; sourceTree = "<group>"; };
 		EFBC57BD1932BF8A007A9C80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EFBC57C31932BF8A007A9C80 /* OnTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBC57C41932BF8A007A9C80 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -241,8 +231,6 @@
 		EFF2268B197F5983007A5A3B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		EFF2268C197F5983007A5A3B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		EFF2268E197F59AE007A5A3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		EFF43ED1194289B600A62E4B /* TypeMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeMasterViewController.h; sourceTree = "<group>"; };
-		EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeMasterViewController.m; sourceTree = "<group>"; };
 		EFF43EF319429D7800A62E4B /* MPCJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCJSONDataSerializer.h; sourceTree = "<group>"; };
 		EFF43EF419429D7800A62E4B /* MPCJSONDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCJSONDataSerializer.m; sourceTree = "<group>"; };
 		EFF43EF519429D7800A62E4B /* MPCJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCJSONSerializer.h; sourceTree = "<group>"; };
@@ -483,12 +471,6 @@
 				EFBC57B41932BF8A007A9C80 /* Main.storyboard */,
 				EF7B84881966541300B33B1A /* FirstViewController.h */,
 				EF7B84891966541300B33B1A /* FirstViewController.m */,
-				EFBC57B71932BF8A007A9C80 /* AlphaMasterViewController.h */,
-				EFBC57B81932BF8A007A9C80 /* AlphaMasterViewController.m */,
-				EFF43ED1194289B600A62E4B /* TypeMasterViewController.h */,
-				EFF43ED2194289B600A62E4B /* TypeMasterViewController.m */,
-				EF0FC9FB19B2A98900FCBE8B /* NearbyViewController.h */,
-				EF0FC9FC19B2A98900FCBE8B /* NearbyViewController.m */,
 				EF29BB051A099F5E001007A5 /* NearViewController.h */,
 				EF29BB061A099F5E001007A5 /* NearViewController.m */,
 				EF2D50E8194F59D40075EFE9 /* FavsMasterViewController.h */,
@@ -501,8 +483,6 @@
 				EFF2268C197F5983007A5A3B /* MapViewController.m */,
 				EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */,
 				EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */,
-				EF2D50F3194F8B3F0075EFE9 /* Restaurant+TableRepresentation.h */,
-				EF2D50F4194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m */,
 				EFBC57DE1932CD04007A9C80 /* Restaurant.h */,
 				EFBC57DF1932CD04007A9C80 /* Restaurant.m */,
 				EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */,
@@ -755,9 +735,7 @@
 				EFF43F0319429D7800A62E4B /* MPCSerializedJSONData.m in Sources */,
 				EF58360B1A044BE200AFE8FC /* TypeListViewController.m in Sources */,
 				EFF43F0519429D7800A62E4B /* ODIN.m in Sources */,
-				EF2D50F5194F8B3F0075EFE9 /* Restaurant+TableRepresentation.m in Sources */,
 				EFBC57B31932BF8A007A9C80 /* AppDelegate.m in Sources */,
-				EF0FC9FD19B2A98900FCBE8B /* NearbyViewController.m in Sources */,
 				EF062D951967200D00E1EA0A /* TSMessageView.m in Sources */,
 				EF062D941967200D00E1EA0A /* TSBlurView.m in Sources */,
 				EFBC57E01932CD04007A9C80 /* Restaurant.m in Sources */,
@@ -767,12 +745,10 @@
 				EF29BB071A099F5E001007A5 /* NearViewController.m in Sources */,
 				EFF43F0219429D7800A62E4B /* MPCJSONSerializer.m in Sources */,
 				EFF2268D197F5983007A5A3B /* MapViewController.m in Sources */,
-				EFBC57B91932BF8A007A9C80 /* AlphaMasterViewController.m in Sources */,
 				EFF43F0619429D7800A62E4B /* Mixpanel.m in Sources */,
 				EF2D50EA194F59D40075EFE9 /* FavsMasterViewController.m in Sources */,
 				EFBC57AF1932BF8A007A9C80 /* main.m in Sources */,
 				EFF43F0119429D7800A62E4B /* MPCJSONDataSerializer.m in Sources */,
-				EFF43ED3194289B600A62E4B /* TypeMasterViewController.m in Sources */,
 				EF28A18A1974910800F7008F /* Util.m in Sources */,
 				EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */,
 				EF9151701A0070F400E5250F /* RestaurantTypeCell.m in Sources */,

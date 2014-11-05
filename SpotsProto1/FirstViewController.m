@@ -129,9 +129,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Buscando:";
-    hud.detailsLabelText = @"Ubicacion";
+    //MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //hud.labelText = @"Buscando:";
+    //hud.detailsLabelText = @"Ubicacion";
     
     [locationManager stopUpdatingLocation];
     locationManager =  nil;
@@ -142,8 +142,8 @@
     {
         if ([placemarks count] > 0 && error == nil)
         {
-            hud.labelText = @"Cargando:";
-            hud.detailsLabelText = @"Datos";
+            //hud.labelText = @"Cargando:";
+            //hud.detailsLabelText = @"Datos";
             dispatch_queue_t downloadQueue = dispatch_queue_create("loadData", NULL);
             dispatch_async(downloadQueue, ^{
                 

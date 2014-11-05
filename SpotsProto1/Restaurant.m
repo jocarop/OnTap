@@ -22,23 +22,6 @@
 @synthesize pagina = _pagina;
 @synthesize geolocation = _geolocation;
 
-- (id)initFromParseObject:(PFObject *)object
-{
-    self = [super init];
-    
-    if (self)
-    {
-        self.objectId = object.objectId;
-        self.nombre = object[@"nombre"];
-        self.telefono = object[@"telefono"];
-        self.direccion = object[@"direccion"];
-        self.tipo = object[@"tipo"];
-        self.imagen = object[@"imagen"];
-    }
-    
-    return self;
-}
-
 - (id)initWithPFObject:(PFObject*)object
 {
     self = [super init];
