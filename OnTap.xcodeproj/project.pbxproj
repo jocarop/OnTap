@@ -35,6 +35,7 @@
 		EF062D931967200D00E1EA0A /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = EF062D751967200D00E1EA0A /* TSMessagesDefaultDesign.json */; };
 		EF062D941967200D00E1EA0A /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF062D781967200D00E1EA0A /* TSBlurView.m */; };
 		EF062D951967200D00E1EA0A /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF062D7A1967200D00E1EA0A /* TSMessageView.m */; };
+		EF135C341A0AD3E3007FC5E2 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF135C331A0AD3E3007FC5E2 /* FavoritesViewController.m */; };
 		EF177C091963A55900D72A4F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C081963A55900D72A4F /* AudioToolbox.framework */; };
 		EF177C0B1963A56E00D72A4F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C0A1963A56E00D72A4F /* CFNetwork.framework */; };
 		EF177C0D1963A57700D72A4F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C0C1963A57700D72A4F /* CoreLocation.framework */; };
@@ -46,7 +47,6 @@
 		EF177C191963A62B00D72A4F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF177C181963A62B00D72A4F /* SystemConfiguration.framework */; };
 		EF28A18A1974910800F7008F /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = EF28A1891974910800F7008F /* Util.m */; };
 		EF29BB071A099F5E001007A5 /* NearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF29BB061A099F5E001007A5 /* NearViewController.m */; };
-		EF2D50EA194F59D40075EFE9 /* FavsMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */; };
 		EF2D50EF194F5BCD0075EFE9 /* RestaurantsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */; };
 		EF37BACB193561F900A1373E /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */; };
 		EF3E82BE195AB8A900784331 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF3E82BB195AB8A900784331 /* Default-568h@2x.png */; };
@@ -150,6 +150,8 @@
 		EF062D791967200D00E1EA0A /* TSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessageView.h; sourceTree = "<group>"; };
 		EF062D7A1967200D00E1EA0A /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
 		EF0FC9FE19B2AD6800FCBE8B /* Tucson.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tucson.gpx; sourceTree = "<group>"; };
+		EF135C321A0AD3E3007FC5E2 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		EF135C331A0AD3E3007FC5E2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		EF177C081963A55900D72A4F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF177C0A1963A56E00D72A4F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EF177C0C1963A57700D72A4F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -163,8 +165,6 @@
 		EF28A1891974910800F7008F /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		EF29BB051A099F5E001007A5 /* NearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearViewController.h; sourceTree = "<group>"; };
 		EF29BB061A099F5E001007A5 /* NearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearViewController.m; sourceTree = "<group>"; };
-		EF2D50E8194F59D40075EFE9 /* FavsMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavsMasterViewController.h; sourceTree = "<group>"; };
-		EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavsMasterViewController.m; sourceTree = "<group>"; };
 		EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsAPI.h; sourceTree = "<group>"; };
 		EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsAPI.m; sourceTree = "<group>"; };
 		EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
@@ -470,8 +470,8 @@
 				EF7B84891966541300B33B1A /* FirstViewController.m */,
 				EF29BB051A099F5E001007A5 /* NearViewController.h */,
 				EF29BB061A099F5E001007A5 /* NearViewController.m */,
-				EF2D50E8194F59D40075EFE9 /* FavsMasterViewController.h */,
-				EF2D50E9194F59D40075EFE9 /* FavsMasterViewController.m */,
+				EF135C321A0AD3E3007FC5E2 /* FavoritesViewController.h */,
+				EF135C331A0AD3E3007FC5E2 /* FavoritesViewController.m */,
 				EF63DFB419B2EF7A0011BE2A /* TypeViewController.h */,
 				EF63DFB519B2EF7A0011BE2A /* TypeViewController.m */,
 				EF5836091A044BE200AFE8FC /* TypeListViewController.h */,
@@ -729,6 +729,7 @@
 				EFF43F0419429D7800A62E4B /* NSData+MPBase64.m in Sources */,
 				EFF43F0319429D7800A62E4B /* MPCSerializedJSONData.m in Sources */,
 				EF58360B1A044BE200AFE8FC /* TypeListViewController.m in Sources */,
+				EF135C341A0AD3E3007FC5E2 /* FavoritesViewController.m in Sources */,
 				EFF43F0519429D7800A62E4B /* ODIN.m in Sources */,
 				EFBC57B31932BF8A007A9C80 /* AppDelegate.m in Sources */,
 				EF062D951967200D00E1EA0A /* TSMessageView.m in Sources */,
@@ -740,7 +741,6 @@
 				EFF43F0219429D7800A62E4B /* MPCJSONSerializer.m in Sources */,
 				EFF2268D197F5983007A5A3B /* MapViewController.m in Sources */,
 				EFF43F0619429D7800A62E4B /* Mixpanel.m in Sources */,
-				EF2D50EA194F59D40075EFE9 /* FavsMasterViewController.m in Sources */,
 				EFBC57AF1932BF8A007A9C80 /* main.m in Sources */,
 				EFF43F0119429D7800A62E4B /* MPCJSONDataSerializer.m in Sources */,
 				EF28A18A1974910800F7008F /* Util.m in Sources */,

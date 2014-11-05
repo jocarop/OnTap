@@ -305,7 +305,7 @@
 - (IBAction)addToFavorites:(UIButton*)sender
 {
     RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
-    [api addFavoriteRestaurant:restaurantObj.objectId];
+    [api addFavoriteRestaurant:restaurantObj];
 }
 
 - (IBAction)showMap:(UIButton*)sender

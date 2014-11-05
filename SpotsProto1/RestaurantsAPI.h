@@ -22,8 +22,8 @@
 + (RestaurantsAPI*)sharedInstance;
 - (BOOL)isCityInCatalogue:(CLPlacemark*)placemark;
 - (void)loadFavoriteRestaurants;
-- (NSMutableArray*)getFavoriteRestaurants;
+- (NSArray*)getFavoriteRestaurants;
 - (void)removeFavoriteRestaurant:(NSInteger)index;
-- (void)addFavoriteRestaurant:(NSString*)objectId;
+- (void)addFavoriteRestaurant:(PFObject*)restaurantObj;
 
 @end

@@ -56,65 +56,38 @@
     return NO;
 }
 
-- (void)loadFavoriteRestaurants
+- (NSArray*)getFavoriteRestaurants
 {
-    NSMutableArray* favoritesIdList = [[NSUserDefaults standardUserDefaults] objectForKey:@"OnTap_Favorites"];
-    if (favoritesIdList == nil)
-        favoritesIdList = [[NSMutableArray alloc] init];
- 
-    favorites = [NSMutableArray array];
-    
-    for (int i=0; i<favoritesIdList.count; i++)
-    {
-        Restaurant* restaurant = [self findRestaurantBySpotId:favoritesIdList[i]];
-        if (restaurant)
-            [favorites addObject:restaurant];
-    }
+    NSArray* favoritesIdList = [[NSUserDefaults standardUserDefaults] objectForKey:@"OnTap_Favorites"];
+    return favoritesIdList;
 }
 
-- (NSMutableArray*)getFavoriteRestaurants
-{
-    if (favorites.count == 0)
-    {
-        [self loadFavoriteRestaurants];
-    }
-    
-    return favorites;
-}
-
-- (void)addFavoriteRestaurant:(NSString*)objectId
+- (void)addFavoriteRestaurant:(PFObject*)restaurantObj
 {
     NSMutableArray* favoritesIdList = [[[NSUserDefaults standardUserDefaults] objectForKey:@"OnTap_Favorites"] mutableCopy];
     if (favoritesIdList == nil)
         favoritesIdList = [[NSMutableArray alloc] init];
-    
-    Restaurant* restaurant = [self findRestaurantBySpotId:objectId];
-    
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF = %@", objectId];
+
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF = %@", restaurantObj.objectId];
     NSArray* results = [favoritesIdList filteredArrayUsingPredicate:predicate];
     
     if (results.count == 0)
     {
-        [favoritesIdList addObject:objectId];
-        [favorites addObject:restaurant];
+        [favoritesIdList addObject:restaurantObj.objectId];
         
         Mixpanel* mixpanel = [Mixpanel sharedInstance];
         [mixpanel track:@"Agrego a Favoritos" properties:@{
-                                                           @"id": restaurant.objectId,
-                                                           @"nombre": restaurant.nombre
+                                                           @"id": restaurantObj.objectId,
+                                                           @"nombre": restaurantObj[@"nombre"]
                                                            }];
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:favoritesIdList forKey:@"OnTap_Favorites"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    [self.delegate refreshFavoritesList];
 }
 
 - (void)removeFavoriteRestaurant:(NSInteger)index
 {
-    [favorites removeObjectAtIndex:index];
-    
     NSMutableArray* favoritesIdList = [[[NSUserDefaults standardUserDefaults] objectForKey:@"OnTap_Favorites"] mutableCopy];
     if (favoritesIdList == nil)
         return;
@@ -126,18 +99,6 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:favoritesIdList forKey:@"OnTap_Favorites"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (Restaurant*)findRestaurantBySpotId:(NSString*)objectId
-{
-    Restaurant* restaurant;
-    NSPredicate* pred = [NSPredicate predicateWithFormat:@"(objectId = %@)", objectId];
-    
-    NSArray* results = [restaurants filteredArrayUsingPredicate:pred];
-    if (results.count > 0)
-        restaurant = [results objectAtIndex:0];
-    
-    return restaurant;
 }
 
 @end

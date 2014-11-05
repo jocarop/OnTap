@@ -11,6 +11,7 @@
 #import "Util.h"
 #import "Mixpanel.h"
 #import "RestaurantsAPI.h"
+#import "RestaurantDetailViewController.h"
 
 @interface NearViewController ()
 {
@@ -139,7 +140,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    static NSString *cellIdentifier = @"RestaurantCell";
+    static NSString *cellIdentifier = @"NearCell";
     
     PFTableViewCell* cell = (PFTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -149,6 +150,18 @@
     cell.textLabel.text = object[@"nombre"];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
+        NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
+        PFObject* object = [self.objects objectAtIndex:indexPath.row];
+        
+        [[segue destinationViewController] setRestaurantObj:object];
+        [[segue destinationViewController] setParentView:@"Cerca de Mi"];
+    }
 }
 
 @end
