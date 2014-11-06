@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 
 @interface RestaurantAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
+
+- (id)initWithPFGeoPoint:(PFGeoPoint*)geoPoint;
 
 @end

@@ -12,6 +12,7 @@
 #import "Mixpanel.h"
 #import "RestaurantsAPI.h"
 #import "RestaurantDetailViewController.h"
+#import "RestaurantAnnotation.h"
 
 @interface NearViewController ()
 {
@@ -83,6 +84,9 @@
         [self.navigationController.navigationBar setTranslucent:NO];
     }
     
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    
     Mixpanel* mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Cerca de Mi"];
 }
@@ -92,6 +96,15 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    CLLocationDegrees latDelta = 0.015;
+    
+    MKCoordinateSpan span = MKCoordinateSpanMake(fabsf(latDelta*2),0.0);
+    MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, span);
+    
+    self.mapView.region = region;
+}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
@@ -113,6 +126,13 @@
     if (error == nil && [CLLocationManager locationServicesEnabled])
     {
         [[self locationManager] startMonitoringSignificantLocationChanges];
+        
+        for (PFObject* object in self.objects)
+        {
+            RestaurantAnnotation* annotation = [[RestaurantAnnotation alloc] initWithPFGeoPoint:object[@"geolocation"]];
+            annotation.title = object[@"nombre"];
+            [self.mapView addAnnotation:annotation];
+        }
     }
 }
 

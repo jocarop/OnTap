@@ -10,4 +10,16 @@
 
 @implementation RestaurantAnnotation
 
+- (id)initWithPFGeoPoint:(PFGeoPoint*)geoPoint
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+    }
+    
+    return self;
+}
+
 @end

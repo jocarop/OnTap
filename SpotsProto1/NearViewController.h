@@ -7,7 +7,10 @@
 //
 
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
 
-@interface NearViewController : PFQueryTableViewController <CLLocationManagerDelegate>
+@interface NearViewController : PFQueryTableViewController <CLLocationManagerDelegate, MKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView* mapView;
 
 @end
