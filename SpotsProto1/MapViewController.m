@@ -58,7 +58,17 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     CLLocationDegrees latDelta = userLocation.coordinate.latitude - annotation.coordinate.latitude;
-    MKCoordinateSpan span = MKCoordinateSpanMake(fabsf(latDelta*3),0.0);
+    CLLocationDegrees lonDelta = userLocation.coordinate.longitude - annotation.coordinate.longitude;
+    
+    MKCoordinateSpan span;
+    if (latDelta > lonDelta)
+    {
+        span = MKCoordinateSpanMake(fabsf(latDelta*3),0.0);
+    }
+    else
+    {
+        span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*3));
+    }
     
     MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, span);
     
