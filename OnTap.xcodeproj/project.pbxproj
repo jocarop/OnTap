@@ -61,7 +61,6 @@
 		EF4EFBB91988C66F0083F654 /* ontap.png in Resources */ = {isa = PBXBuildFile; fileRef = EF4EFBB81988C66F0083F654 /* ontap.png */; };
 		EF58360B1A044BE200AFE8FC /* TypeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF58360A1A044BE200AFE8FC /* TypeListViewController.m */; };
 		EF63DFB619B2EF7A0011BE2A /* TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF63DFB519B2EF7A0011BE2A /* TypeViewController.m */; };
-		EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */; };
 		EF6E833219833F7B00EAB5D7 /* ver-mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E833119833F7B00EAB5D7 /* ver-mapa.png */; };
 		EF6E83381983402A00EAB5D7 /* ver-fotos.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E83371983402A00EAB5D7 /* ver-fotos.png */; };
 		EF6E833A1983407A00EAB5D7 /* favoritos.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E83391983407A00EAB5D7 /* favoritos.png */; };
@@ -79,6 +78,7 @@
 		EF8001CF1965FA120079FC95 /* favorite_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001CB1965FA120079FC95 /* favorite_selected@2x.png */; };
 		EF8001D01965FA120079FC95 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001CC1965FA120079FC95 /* favorite.png */; };
 		EF8001D11965FA120079FC95 /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001CD1965FA120079FC95 /* favorite@2x.png */; };
+		EF817A211A0B4E4000B475BA /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = EF817A201A0B4E4000B475BA /* RestaurantAnnotation.m */; };
 		EF91516B1A00665D00E5250F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91516A1A00665D00E5250F /* Parse.framework */; };
 		EF91516D1A00666D00E5250F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91516C1A00666D00E5250F /* Bolts.framework */; };
 		EF9151701A0070F400E5250F /* RestaurantTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF91516F1A0070F400E5250F /* RestaurantTypeCell.m */; };
@@ -183,8 +183,6 @@
 		EF58360A1A044BE200AFE8FC /* TypeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeListViewController.m; sourceTree = "<group>"; };
 		EF63DFB419B2EF7A0011BE2A /* TypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeViewController.h; sourceTree = "<group>"; };
 		EF63DFB519B2EF7A0011BE2A /* TypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeViewController.m; sourceTree = "<group>"; };
-		EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestaurantAnnotation.h; path = ../RestaurantAnnotation.h; sourceTree = "<group>"; };
-		EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestaurantAnnotation.m; path = ../RestaurantAnnotation.m; sourceTree = "<group>"; };
 		EF6E833119833F7B00EAB5D7 /* ver-mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-mapa.png"; sourceTree = "<group>"; };
 		EF6E83371983402A00EAB5D7 /* ver-fotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-fotos.png"; sourceTree = "<group>"; };
 		EF6E83391983407A00EAB5D7 /* favoritos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritos.png; sourceTree = "<group>"; };
@@ -204,6 +202,8 @@
 		EF8001CB1965FA120079FC95 /* favorite_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite_selected@2x.png"; sourceTree = "<group>"; };
 		EF8001CC1965FA120079FC95 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		EF8001CD1965FA120079FC95 /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@2x.png"; sourceTree = "<group>"; };
+		EF817A1F1A0B4E4000B475BA /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantAnnotation.h; sourceTree = "<group>"; };
+		EF817A201A0B4E4000B475BA /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantAnnotation.m; sourceTree = "<group>"; };
 		EF91516A1A00665D00E5250F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		EF91516C1A00666D00E5250F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		EF91516E1A0070F400E5250F /* RestaurantTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantTypeCell.h; sourceTree = "<group>"; };
@@ -480,12 +480,12 @@
 				EFF2268C197F5983007A5A3B /* MapViewController.m */,
 				EF37BAC9193561F900A1373E /* RestaurantDetailViewController.h */,
 				EF37BACA193561F900A1373E /* RestaurantDetailViewController.m */,
-				EF6E832E1983333900EAB5D7 /* RestaurantAnnotation.h */,
-				EF6E832F1983333900EAB5D7 /* RestaurantAnnotation.m */,
 				EF2D50ED194F5BCD0075EFE9 /* RestaurantsAPI.h */,
 				EF2D50EE194F5BCD0075EFE9 /* RestaurantsAPI.m */,
 				EF91516E1A0070F400E5250F /* RestaurantTypeCell.h */,
 				EF91516F1A0070F400E5250F /* RestaurantTypeCell.m */,
+				EF817A1F1A0B4E4000B475BA /* RestaurantAnnotation.h */,
+				EF817A201A0B4E4000B475BA /* RestaurantAnnotation.m */,
 				EF28A1881974910800F7008F /* Util.h */,
 				EF28A1891974910800F7008F /* Util.m */,
 				EF062D501967170A00E1EA0A /* MBProgressHUD.h */,
@@ -744,8 +744,8 @@
 				EFBC57AF1932BF8A007A9C80 /* main.m in Sources */,
 				EFF43F0119429D7800A62E4B /* MPCJSONDataSerializer.m in Sources */,
 				EF28A18A1974910800F7008F /* Util.m in Sources */,
-				EF6E83301983333900EAB5D7 /* RestaurantAnnotation.m in Sources */,
 				EF9151701A0070F400E5250F /* RestaurantTypeCell.m in Sources */,
+				EF817A211A0B4E4000B475BA /* RestaurantAnnotation.m in Sources */,
 				EF37BACB193561F900A1373E /* RestaurantDetailViewController.m in Sources */,
 				EF062D7F1967200D00E1EA0A /* HexColor.m in Sources */,
 			);
