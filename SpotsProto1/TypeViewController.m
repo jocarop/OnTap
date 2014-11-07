@@ -65,6 +65,9 @@
         [self.navigationController.navigationBar setTintColor:barColor];
         [self.navigationController.navigationBar setTranslucent:NO];
     }
+    
+    Mixpanel* mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Explora"];
 }
 
 - (void)didReceiveMemoryWarning

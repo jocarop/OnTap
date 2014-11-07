@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "RestaurantsAPI.h"
 
 @interface FavoritesViewController : PFQueryTableViewController
 

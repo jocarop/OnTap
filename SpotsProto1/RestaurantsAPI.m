@@ -12,13 +12,6 @@
 
 @interface RestaurantsAPI ()
 {
-    NSMutableArray* restaurants;
-    NSMutableArray* nearbyRestaurants;
-    NSMutableDictionary* restaurantsAlphabetically;
-    NSArray* alphaKeys;
-    NSMutableDictionary* restaurantsByType;
-    NSArray* typeKeys;
-    NSMutableArray* favorites;
 }
 
 @end

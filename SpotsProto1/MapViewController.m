@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "Util.h"
 #import "RestaurantAnnotation.h"
+#import "RestaurantsAPI.h"
 
 @interface MapViewController ()
 
@@ -53,29 +54,28 @@
     {
         [self.mapView addAnnotation:annotation];
     }
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    CLLocationDegrees latDelta = userLocation.coordinate.latitude - annotation.coordinate.latitude;
-    CLLocationDegrees lonDelta = userLocation.coordinate.longitude - annotation.coordinate.longitude;
+    
+    CLPlacemark* placemark = [RestaurantsAPI sharedInstance].placemark;
+    CLLocationDegrees latDelta = placemark.location.coordinate.latitude - annotation.coordinate.latitude;
+    CLLocationDegrees lonDelta = placemark.location.coordinate.longitude - annotation.coordinate.longitude;
     
     MKCoordinateSpan span;
-    if (latDelta > lonDelta)
+    if (fabsf(latDelta) > fabsf(lonDelta))
     {
-        span = MKCoordinateSpanMake(fabsf(latDelta*3),0.0);
+        span = MKCoordinateSpanMake(fabsf(latDelta*2),0.0);
     }
     else
     {
-        span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*3));
+        span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*2));
     }
     
-    MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, span);
-    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(placemark.location.coordinate.latitude-latDelta/2, placemark.location.coordinate.longitude-lonDelta/2);
+
+    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
     self.mapView.region = region;
 }
 
-- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
+- (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered
 {
     [self.mapView selectAnnotation:[[self.mapView annotations] firstObject] animated:YES];
 }

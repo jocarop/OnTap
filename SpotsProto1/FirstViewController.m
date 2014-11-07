@@ -51,6 +51,8 @@
                                     subtitle:@"Servicios de ubicación deshabilitados. Habilite los servicios de ubicación en 'Ajustes > Privacidad > Localización' para poder utilizar esta aplicación."
                                         type:TSMessageNotificationTypeError duration:TSMessageNotificationDurationEndless
                                canBeDismissedByUser:NO];
+        
+        self.tabBar.userInteractionEnabled = NO;
     }
 }
 

@@ -8,8 +8,8 @@
 
 #import "FavoritesViewController.h"
 #import "Util.h"
-#import "RestaurantsAPI.h"
 #import "RestaurantDetailViewController.h"
+#import "Mixpanel.h"
 
 @interface FavoritesViewController ()
 
@@ -60,7 +60,9 @@
         [self.navigationController.navigationBar setTintColor:barColor];
         [self.navigationController.navigationBar setTranslucent:NO];
     }
-
+    
+    Mixpanel* mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Favoritos"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,7 +101,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return NO;
+    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

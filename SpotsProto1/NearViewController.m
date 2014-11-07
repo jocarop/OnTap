@@ -65,8 +65,6 @@
 {
     [super viewDidLoad];
     
-    [self.navigationItem setTitle:[RestaurantsAPI sharedInstance].placemark.locality];
-    
     UIColor* barColor = [UIColor colorWithRed:255.0/255.0 green:144.0/255.0 blue:66.0/255.0 alpha:0.9f];
     UIColor* gray = [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1];
     
@@ -86,24 +84,11 @@
     
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
-    
-    Mixpanel* mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"Cerca de Mi"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    CLLocationDegrees latDelta = 0.015;
-    
-    MKCoordinateSpan span = MKCoordinateSpanMake(fabsf(latDelta*2),0.0);
-    MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, span);
-    
-    self.mapView.region = region;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -126,6 +111,29 @@
     if (error == nil && [CLLocationManager locationServicesEnabled])
     {
         [[self locationManager] startMonitoringSignificantLocationChanges];
+        
+        PFObject* farthestRest = [self.objects lastObject];
+        PFGeoPoint* geoPoint = farthestRest[@"geolocation"];
+        
+        CLPlacemark* placemark = [RestaurantsAPI sharedInstance].placemark;
+    
+        CLLocationDegrees latDelta = placemark.location.coordinate.latitude - geoPoint.latitude;
+        CLLocationDegrees lonDelta = placemark.location.coordinate.longitude - geoPoint.longitude;
+        
+        MKCoordinateSpan span;
+        if (fabsf(latDelta) > fabsf(lonDelta))
+        {
+            span = MKCoordinateSpanMake(fabsf(latDelta*2),0.0);
+        }
+        else
+        {
+            span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*2));
+        }
+        
+        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(placemark.location.coordinate.latitude-latDelta/2, placemark.location.coordinate.longitude-lonDelta/2);
+        
+        MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+        self.mapView.region = region;
         
         for (PFObject* object in self.objects)
         {
@@ -151,9 +159,6 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
     [query whereKey:@"ciudad" equalTo:ciudad];
     [query whereKey:@"geolocation" nearGeoPoint:geoPoint withinKilometers:1.0f];
-    
-    if (self.objects.count == 0)
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     return query;
 }
