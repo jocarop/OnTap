@@ -70,8 +70,12 @@
         CGFloat width = self.view.frame.size.width;
     
         PFImageView* imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, width, 195)];
+        
+        imageView.image = [UIImage imageNamed:@"AppIcon58x58.png"];
         PFFile* imageFile = _restaurantType[@"image"];
         imageView.file = imageFile;
+        
+        [imageView loadInBackground];
     
         UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 4, width, 25)];
         titleLabel.text = _restaurantType[@"type"];
@@ -96,7 +100,7 @@
 
 - (PFQuery *)queryForTable
 {
-    NSString* ciudad = [RestaurantsAPI sharedInstance].placemark.locality;
+    NSString* ciudad = [RestaurantsAPI sharedInstance].locality;
     if ([ciudad isEqual:@"Cupertino"])
         ciudad = @"Sunnyvale";
     

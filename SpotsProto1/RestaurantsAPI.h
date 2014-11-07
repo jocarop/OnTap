@@ -10,19 +10,21 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Restaurant.h"
 
-@protocol RestaurantsListDelegate <NSObject>
-- (void) refreshFavoritesList;
+@protocol LocationDelegate <NSObject>
+- (void) updateNearRestaurants;
 @end
 
 @interface RestaurantsAPI : NSObject
 
-@property (nonatomic, retain) id <RestaurantsListDelegate> delegate;
-@property (nonatomic, strong) CLPlacemark* placemark;
+@property (nonatomic, retain) id <LocationDelegate> delegate;
+@property (nonatomic, strong) NSString* locality;
+@property (nonatomic, strong) CLLocation* location;
 
 + (RestaurantsAPI*)sharedInstance;
-- (BOOL)isCityInCatalogue:(CLPlacemark*)placemark;
+- (BOOL)isCityInCatalogue:(NSString*)city;
 - (NSArray*)getFavoriteRestaurants;
 - (void)removeFavoriteRestaurant:(NSInteger)index;
 - (void)addFavoriteRestaurant:(PFObject*)restaurantObj;
+- (void)updateLocation:(CLLocation*)newLocation;
 
 @end

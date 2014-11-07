@@ -55,9 +55,9 @@
         [self.mapView addAnnotation:annotation];
     }
     
-    CLPlacemark* placemark = [RestaurantsAPI sharedInstance].placemark;
-    CLLocationDegrees latDelta = placemark.location.coordinate.latitude - annotation.coordinate.latitude;
-    CLLocationDegrees lonDelta = placemark.location.coordinate.longitude - annotation.coordinate.longitude;
+    CLLocation* location = [RestaurantsAPI sharedInstance].location;
+    CLLocationDegrees latDelta = location.coordinate.latitude - annotation.coordinate.latitude;
+    CLLocationDegrees lonDelta = location.coordinate.longitude - annotation.coordinate.longitude;
     
     MKCoordinateSpan span;
     if (fabsf(latDelta) > fabsf(lonDelta))
@@ -69,7 +69,7 @@
         span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*2));
     }
     
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(placemark.location.coordinate.latitude-latDelta/2, placemark.location.coordinate.longitude-lonDelta/2);
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(location.coordinate.latitude-latDelta/2, location.coordinate.longitude-lonDelta/2);
 
     MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
     self.mapView.region = region;
@@ -77,7 +77,14 @@
 
 - (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered
 {
-    [self.mapView selectAnnotation:[[self.mapView annotations] firstObject] animated:YES];
+    for (NSObject* a in [self.mapView annotations])
+    {
+        if ([a isMemberOfClass:[RestaurantAnnotation class]])
+        {
+            [self.mapView selectAnnotation:(RestaurantAnnotation*)a animated:YES];
+            break;
+        }
+    }
 }
 
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar

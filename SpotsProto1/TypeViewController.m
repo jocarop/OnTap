@@ -47,7 +47,7 @@
 {
     [super viewDidLoad];
     
-    [self.navigationItem setTitle:[RestaurantsAPI sharedInstance].placemark.locality];
+    [self.navigationItem setTitle:[RestaurantsAPI sharedInstance].locality];
     
     UIColor* barColor = [UIColor colorWithRed:255.0/255.0 green:144.0/255.0 blue:66.0/255.0 alpha:0.9f];
     UIColor* gray = [UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1];

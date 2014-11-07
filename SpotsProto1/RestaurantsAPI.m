@@ -19,6 +19,8 @@
 @implementation RestaurantsAPI
 
 @synthesize delegate;
+@synthesize locality;
+@synthesize location;
 
 + (RestaurantsAPI*)sharedInstance
 {
@@ -32,15 +34,36 @@
     return _sharedInstance;
 }
 
-- (BOOL)isCityInCatalogue:(CLPlacemark *)placemark
+- (void)updateLocation:(CLLocation*)newLocation
 {
-    NSString* ciudad = placemark.locality;
+    self.location = newLocation;
+    
+    CLLocationDegrees latDelta = newLocation.coordinate.latitude - location.coordinate.latitude;
+    CLLocationDegrees lonDelta = newLocation.coordinate.longitude - location.coordinate.longitude;
+    
+    if (fabsf(latDelta) >= 0.225 || fabsf(lonDelta) >= 0.225)
+    {
+        CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+        [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error)
+        {
+             if ([placemarks count] > 0 && error == nil)
+             {
+                 CLPlacemark* placemark = [placemarks objectAtIndex:0];
+                 self.locality = placemark.locality;
+             }
+        }];
+    }
+    
+    [self.delegate updateNearRestaurants];
+}
 
-    if ([ciudad isEqual:@"Cupertino"])
-        ciudad = @"Sunnyvale";
+- (BOOL)isCityInCatalogue:(NSString*)city
+{
+    if ([city isEqual:@"Cupertino"])
+        city = @"Sunnyvale";
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
-    [query whereKey:@"ciudad" equalTo:ciudad];
+    [query whereKey:@"ciudad" equalTo:city];
     NSInteger count = [query countObjects];
     
     if (count > 0)

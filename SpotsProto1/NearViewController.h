@@ -8,8 +8,9 @@
 
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
+#import "RestaurantsAPI.h"
 
-@interface NearViewController : PFQueryTableViewController <CLLocationManagerDelegate, MKMapViewDelegate>
+@interface NearViewController : PFQueryTableViewController <CLLocationManagerDelegate, MKMapViewDelegate, LocationDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView* mapView;
 

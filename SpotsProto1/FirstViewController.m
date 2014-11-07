@@ -159,9 +159,10 @@
                                                           }];
                 
                 RestaurantsAPI* api = [RestaurantsAPI sharedInstance];
-                api.placemark = placemark;
-                BOOL cityOK = [api isCityInCatalogue:placemark];
+                api.locality = placemark.locality;
+                api.location = placemark.location;
                 
+                BOOL cityOK = [api isCityInCatalogue:placemark.locality];
                 if (!cityOK)
                 {
                     [TSMessage showNotificationInViewController:[TSMessage defaultViewController]

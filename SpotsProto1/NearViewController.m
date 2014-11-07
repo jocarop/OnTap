@@ -10,7 +10,6 @@
 #import "TSMessage.h"
 #import "Util.h"
 #import "Mixpanel.h"
-#import "RestaurantsAPI.h"
 #import "RestaurantDetailViewController.h"
 #import "RestaurantAnnotation.h"
 
@@ -84,6 +83,8 @@
     
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
+    
+    [RestaurantsAPI sharedInstance].delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,15 +94,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
     CLLocation* location = [locations lastObject];
-    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
-    {
-        if ([placemarks count] > 0 && error == nil)
-        {
-            [RestaurantsAPI sharedInstance].placemark = [placemarks objectAtIndex:0];
-        }
-    }];
+    [[RestaurantsAPI sharedInstance] updateLocation:location];
 }
 
 - (void)objectsDidLoad:(NSError *)error
@@ -115,10 +109,9 @@
         PFObject* farthestRest = [self.objects lastObject];
         PFGeoPoint* geoPoint = farthestRest[@"geolocation"];
         
-        CLPlacemark* placemark = [RestaurantsAPI sharedInstance].placemark;
-    
-        CLLocationDegrees latDelta = placemark.location.coordinate.latitude - geoPoint.latitude;
-        CLLocationDegrees lonDelta = placemark.location.coordinate.longitude - geoPoint.longitude;
+        CLLocation* location = [RestaurantsAPI sharedInstance].location;
+        CLLocationDegrees latDelta = location.coordinate.latitude - geoPoint.latitude;
+        CLLocationDegrees lonDelta = location.coordinate.longitude - geoPoint.longitude;
         
         MKCoordinateSpan span;
         if (fabsf(latDelta) > fabsf(lonDelta))
@@ -130,7 +123,7 @@
             span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*2));
         }
         
-        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(placemark.location.coordinate.latitude-latDelta/2, placemark.location.coordinate.longitude-lonDelta/2);
+        CLLocationCoordinate2D center = CLLocationCoordinate2DMake(location.coordinate.latitude-latDelta/2, location.coordinate.longitude-lonDelta/2);
         
         MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
         self.mapView.region = region;
@@ -146,15 +139,15 @@
 
 - (PFQuery *)queryForTable
 {
-    CLPlacemark* placemark = [RestaurantsAPI sharedInstance].placemark;
-    if (placemark == nil)
+    CLLocation* location = [RestaurantsAPI sharedInstance].location;
+    if (location == nil)
         return nil;
     
-    NSString* ciudad = placemark.locality;
+    NSString* ciudad = [RestaurantsAPI sharedInstance].locality;
     if ([ciudad isEqual:@"Cupertino"])
         ciudad = @"Sunnyvale";
     
-    PFGeoPoint* geoPoint = [PFGeoPoint geoPointWithLocation:placemark.location];
+    PFGeoPoint* geoPoint = [PFGeoPoint geoPointWithLocation:location];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
     [query whereKey:@"ciudad" equalTo:ciudad];
@@ -187,6 +180,11 @@
         [[segue destinationViewController] setRestaurantObj:object];
         [[segue destinationViewController] setParentView:@"Cerca de Mi"];
     }
+}
+
+- (void)updateNearRestaurants
+{
+    [self loadObjects];
 }
 
 @end
