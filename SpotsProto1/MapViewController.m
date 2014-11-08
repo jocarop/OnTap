@@ -17,7 +17,7 @@
 
 @implementation MapViewController
 
-@synthesize annotation;
+@synthesize annotations;
 
 - (void)viewDidLoad
 {
@@ -50,10 +50,12 @@
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     
-    if (annotation != nil)
+    for (RestaurantAnnotation* annotation in annotations)
     {
         [self.mapView addAnnotation:annotation];
     }
+    
+    RestaurantAnnotation* annotation = [annotations firstObject];
     
     CLLocation* location = [RestaurantsAPI sharedInstance].location;
     CLLocationDegrees latDelta = location.coordinate.latitude - annotation.coordinate.latitude;

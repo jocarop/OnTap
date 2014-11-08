@@ -14,6 +14,6 @@
 
 @property IBOutlet UINavigationBar* myNavigationBar;
 @property (weak, nonatomic) IBOutlet MKMapView* mapView;
-@property (strong, nonatomic) RestaurantAnnotation* annotation;
+@property (strong, nonatomic) NSMutableArray* annotations;
 
 @end

@@ -328,13 +328,39 @@
 {
     if ([[segue identifier] isEqualToString:@"showMap"])
     {
-        RestaurantAnnotation* annotation = [[RestaurantAnnotation alloc] init];
-        PFGeoPoint* geoPoint = restaurantObj[@"geolocation"];
-        CLLocationCoordinate2D geolocation = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
-        annotation.coordinate = geolocation;
-        annotation.title = restaurantObj[@"nombre"];
-        annotation.subtitle = restaurantObj[@"tipo"];
-        [[segue destinationViewController] setAnnotation:annotation];
+        NSMutableArray* annotations = [[NSMutableArray alloc] init];
+        
+        if ([restaurantObj[@"tieneSucursales"] boolValue])
+        {
+            NSArray* sucursales = restaurantObj[@"sucursales"];
+            
+            for (NSDictionary* sucursal in sucursales)
+            {
+                CLLocationDegrees latitude = [[sucursal objectForKey:@"latitud"] floatValue];
+                CLLocationDegrees longitude = [[sucursal objectForKey:@"longitud"] floatValue];
+                
+                RestaurantAnnotation* annotation = [[RestaurantAnnotation alloc] init];
+                CLLocationCoordinate2D geolocation = CLLocationCoordinate2DMake(latitude, longitude);
+                annotation.coordinate = geolocation;
+                annotation.title = restaurantObj[@"nombre"];
+                annotation.subtitle = restaurantObj[@"tipo"];
+            
+                [annotations addObject:annotation];
+            }
+        }
+        else
+        {
+            RestaurantAnnotation* annotation = [[RestaurantAnnotation alloc] init];
+            PFGeoPoint* geoPoint = restaurantObj[@"geolocation"];
+            CLLocationCoordinate2D geolocation = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+            annotation.coordinate = geolocation;
+            annotation.title = restaurantObj[@"nombre"];
+            annotation.subtitle = restaurantObj[@"tipo"];
+            
+            [annotations addObject:annotation];
+        }
+        
+        [[segue destinationViewController] setAnnotations:annotations];
     }
 }
 
