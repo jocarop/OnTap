@@ -34,7 +34,7 @@
     return _sharedInstance;
 }
 
-- (void)updateLocation:(CLLocation*)newLocation
+/*- (void)updateLocation:(CLLocation*)newLocation
 {
     self.location = newLocation;
     
@@ -55,7 +55,7 @@
     }
     
     [self.delegate updateNearRestaurants];
-}
+}*/
 
 - (BOOL)isCityInCatalogue:(NSString*)city
 {

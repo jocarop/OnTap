@@ -37,8 +37,13 @@
         [self.tabBar setTintColor:gray];
     }
     
-    if([CLLocationManager locationServicesEnabled])
+    /*if([CLLocationManager locationServicesEnabled])
     {
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+        {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        
         [[self locationManager] startUpdatingLocation];
     }
     else
@@ -53,7 +58,7 @@
                                canBeDismissedByUser:NO];
         
         self.tabBar.userInteractionEnabled = NO;
-    }
+    }*/
 }
 
 - (void)didReceiveMemoryWarning

@@ -64,8 +64,12 @@
 		EF6E833219833F7B00EAB5D7 /* ver-mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E833119833F7B00EAB5D7 /* ver-mapa.png */; };
 		EF6E83381983402A00EAB5D7 /* ver-fotos.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E83371983402A00EAB5D7 /* ver-fotos.png */; };
 		EF6E833A1983407A00EAB5D7 /* favoritos.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E83391983407A00EAB5D7 /* favoritos.png */; };
+		EF6F3C7E1B9FF6FA00AFC50F /* Versalles.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF6F3C7B1B9FF6FA00AFC50F /* Versalles.gpx */; };
+		EF6F3C7F1B9FF6FA00AFC50F /* EstadioSonora.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF6F3C7C1B9FF6FA00AFC50F /* EstadioSonora.gpx */; };
+		EF6F3C801B9FF6FA00AFC50F /* Metrocentro.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF6F3C7D1B9FF6FA00AFC50F /* Metrocentro.gpx */; };
+		EF6F3C821BA0067200AFC50F /* Mexicali.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF6F3C811BA0067200AFC50F /* Mexicali.gpx */; };
 		EF7B848A1966541300B33B1A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7B84891966541300B33B1A /* FirstViewController.m */; };
-		EF7B848C19667A8200B33B1A /* camacho.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF7B848B19667A8200B33B1A /* camacho.gpx */; };
+		EF7B848C19667A8200B33B1A /* Cupertino.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EF7B848B19667A8200B33B1A /* Cupertino.gpx */; };
 		EF8001BE1965F5860079FC95 /* name_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001BA1965F5860079FC95 /* name_selected.png */; };
 		EF8001BF1965F5860079FC95 /* name_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001BB1965F5860079FC95 /* name_selected@2x.png */; };
 		EF8001C01965F5860079FC95 /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8001BC1965F5860079FC95 /* name.png */; };
@@ -149,7 +153,7 @@
 		EF062D781967200D00E1EA0A /* TSBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSBlurView.m; sourceTree = "<group>"; };
 		EF062D791967200D00E1EA0A /* TSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMessageView.h; sourceTree = "<group>"; };
 		EF062D7A1967200D00E1EA0A /* TSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMessageView.m; sourceTree = "<group>"; };
-		EF0FC9FE19B2AD6800FCBE8B /* Tucson.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tucson.gpx; sourceTree = "<group>"; };
+		EF0FC9FE19B2AD6800FCBE8B /* Firenze.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Firenze.gpx; sourceTree = "<group>"; };
 		EF135C321A0AD3E3007FC5E2 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		EF135C331A0AD3E3007FC5E2 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		EF177C081963A55900D72A4F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -186,10 +190,14 @@
 		EF6E833119833F7B00EAB5D7 /* ver-mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-mapa.png"; sourceTree = "<group>"; };
 		EF6E83371983402A00EAB5D7 /* ver-fotos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver-fotos.png"; sourceTree = "<group>"; };
 		EF6E83391983407A00EAB5D7 /* favoritos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritos.png; sourceTree = "<group>"; };
-		EF6E833B1983463E00EAB5D7 /* hermosillo.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = hermosillo.gpx; path = SpotsProto1/hermosillo.gpx; sourceTree = "<group>"; };
+		EF6E833B1983463E00EAB5D7 /* CasaMama.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = CasaMama.gpx; path = SpotsProto1/CasaMama.gpx; sourceTree = "<group>"; };
+		EF6F3C7B1B9FF6FA00AFC50F /* Versalles.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Versalles.gpx; sourceTree = "<group>"; };
+		EF6F3C7C1B9FF6FA00AFC50F /* EstadioSonora.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EstadioSonora.gpx; sourceTree = "<group>"; };
+		EF6F3C7D1B9FF6FA00AFC50F /* Metrocentro.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Metrocentro.gpx; sourceTree = "<group>"; };
+		EF6F3C811BA0067200AFC50F /* Mexicali.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Mexicali.gpx; sourceTree = "<group>"; };
 		EF7B84881966541300B33B1A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		EF7B84891966541300B33B1A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		EF7B848B19667A8200B33B1A /* camacho.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = camacho.gpx; path = SpotsProto1/camacho.gpx; sourceTree = "<group>"; };
+		EF7B848B19667A8200B33B1A /* Cupertino.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Cupertino.gpx; path = SpotsProto1/Cupertino.gpx; sourceTree = "<group>"; };
 		EF8001BA1965F5860079FC95 /* name_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = name_selected.png; sourceTree = "<group>"; };
 		EF8001BB1965F5860079FC95 /* name_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "name_selected@2x.png"; sourceTree = "<group>"; };
 		EF8001BC1965F5860079FC95 /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = name.png; sourceTree = "<group>"; };
@@ -416,9 +424,13 @@
 		EFBC57961932BF8A007A9C80 = {
 			isa = PBXGroup;
 			children = (
-				EF7B848B19667A8200B33B1A /* camacho.gpx */,
-				EF6E833B1983463E00EAB5D7 /* hermosillo.gpx */,
-				EF0FC9FE19B2AD6800FCBE8B /* Tucson.gpx */,
+				EF6F3C7B1B9FF6FA00AFC50F /* Versalles.gpx */,
+				EF6F3C811BA0067200AFC50F /* Mexicali.gpx */,
+				EF6F3C7C1B9FF6FA00AFC50F /* EstadioSonora.gpx */,
+				EF6F3C7D1B9FF6FA00AFC50F /* Metrocentro.gpx */,
+				EF7B848B19667A8200B33B1A /* Cupertino.gpx */,
+				EF6E833B1983463E00EAB5D7 /* CasaMama.gpx */,
+				EF0FC9FE19B2AD6800FCBE8B /* Firenze.gpx */,
 				EFBC57A81932BF8A007A9C80 /* SpotsProto1 */,
 				EF062D531967200C00E1EA0A /* TSMessages */,
 				EFF43EF019429D7800A62E4B /* Mixpanel */,
@@ -622,9 +634,12 @@
 		EFBC57971932BF8A007A9C80 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Appvertising;
 				TargetAttributes = {
+					EFBC579E1932BF8A007A9C80 = {
+						DevelopmentTeam = 646P6HHFKN;
+					};
 					EFBC57C21932BF8A007A9C80 = {
 						TestTargetID = EFBC579E1932BF8A007A9C80;
 					};
@@ -659,6 +674,7 @@
 				EF3E82CC195ABA4900784331 /* AppIcon80x80.png in Resources */,
 				EF062D831967200D00E1EA0A /* NotificationBackgroundError.png in Resources */,
 				EF8001BE1965F5860079FC95 /* name_selected.png in Resources */,
+				EF6F3C821BA0067200AFC50F /* Mexicali.gpx in Resources */,
 				EF062D811967200D00E1EA0A /* README.md in Resources */,
 				EF8001CE1965FA120079FC95 /* favorite_selected.png in Resources */,
 				EF3E82CB195ABA4900784331 /* AppIcon58x58.png in Resources */,
@@ -669,7 +685,8 @@
 				EF062D861967200D00E1EA0A /* NotificationBackgroundErrorIcon@2x.png in Resources */,
 				EF062D801967200D00E1EA0A /* LICENCE in Resources */,
 				EF062D901967200D00E1EA0A /* NotificationBackgroundWarningIcon@2x.png in Resources */,
-				EF7B848C19667A8200B33B1A /* camacho.gpx in Resources */,
+				EF7B848C19667A8200B33B1A /* Cupertino.gpx in Resources */,
+				EF6F3C7E1B9FF6FA00AFC50F /* Versalles.gpx in Resources */,
 				EF3E82C4195ABA1400784331 /* AppIcon57x57.png in Resources */,
 				EF062D8E1967200D00E1EA0A /* NotificationBackgroundWarning@2x.png in Resources */,
 				EF8001D01965FA120079FC95 /* favorite.png in Resources */,
@@ -693,6 +710,7 @@
 				EF062D931967200D00E1EA0A /* TSMessagesDefaultDesign.json in Resources */,
 				EFBC57AD1932BF8A007A9C80 /* InfoPlist.strings in Resources */,
 				EFBC57B61932BF8A007A9C80 /* Main.storyboard in Resources */,
+				EF6F3C801B9FF6FA00AFC50F /* Metrocentro.gpx in Resources */,
 				EF8001C01965F5860079FC95 /* name.png in Resources */,
 				EF6E83381983402A00EAB5D7 /* ver-fotos.png in Resources */,
 				EF3E82C5195ABA1400784331 /* AppIcon114x114.png in Resources */,
@@ -700,6 +718,7 @@
 				EF8001C11965F5860079FC95 /* name@2x.png in Resources */,
 				EF8001C71965F59F0079FC95 /* type_selected@2x.png in Resources */,
 				EF062D881967200D00E1EA0A /* NotificationBackgroundMessage@2x.png in Resources */,
+				EF6F3C7F1B9FF6FA00AFC50F /* EstadioSonora.gpx in Resources */,
 				EF3E82C0195AB8A900784331 /* Default@2x.png in Resources */,
 				EF062D921967200D00E1EA0A /* NotificationButtonBackground@2x.png in Resources */,
 				EF062D7B1967200D00E1EA0A /* .gitignore in Resources */,
@@ -801,7 +820,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -840,7 +858,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -872,6 +889,8 @@
 		EFBC57D51932BF8A007A9C80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/andreamartinezdecastro/Desktop/JC/SpotsProto1,
@@ -881,6 +900,7 @@
 				INFOPLIST_FILE = "SpotsProto1/OnTap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = OnTap;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -888,6 +908,8 @@
 		EFBC57D61932BF8A007A9C80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/andreamartinezdecastro/Desktop/JC/SpotsProto1,
@@ -897,6 +919,7 @@
 				INFOPLIST_FILE = "SpotsProto1/OnTap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = OnTap;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -904,7 +927,6 @@
 		EFBC57D81932BF8A007A9C80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpotsProto1.app/SpotsProto1";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -927,7 +949,6 @@
 		EFBC57D91932BF8A007A9C80 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpotsProto1.app/SpotsProto1";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -947,7 +968,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -979,6 +999,8 @@
 		EFEE437D193EDDC20093A103 /* Adhoc Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/andreamartinezdecastro/Desktop/JC/SpotsProto1,
@@ -988,6 +1010,7 @@
 				INFOPLIST_FILE = "SpotsProto1/OnTap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = OnTap;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Adhoc Distribution";
@@ -995,7 +1018,6 @@
 		EFEE437E193EDDC20093A103 /* Adhoc Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpotsProto1.app/SpotsProto1";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
