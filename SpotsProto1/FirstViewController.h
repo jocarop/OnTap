@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface FirstViewController : UITabBarController <CLLocationManagerDelegate>
+@interface FirstViewController : UITabBarController
 
 @end

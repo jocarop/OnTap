@@ -103,8 +103,6 @@
     }
     
     self.mapView.delegate = self;
-    
-    //[RestaurantsAPI sharedInstance].delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,7 +155,6 @@
         
         UITabBarController* tabController = (UITabBarController*)self.tabBarController;
         tabController.tabBar.userInteractionEnabled = NO;
-        //[MBProgressHUD hideHUDForView:self.view animated:YES];
     }
     
     if (determined)
@@ -174,13 +171,6 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    //MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    //hud.labelText = @"Buscando:";
-    //hud.detailsLabelText = @"Ubicacion";
-    
-    //[locationManager stopUpdatingLocation];
-    //locationManager =  nil;
-    
     CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
     CLLocation* location = [locations lastObject];
  
@@ -204,8 +194,6 @@
      {
          if ([placemarks count] > 0 && error == nil)
          {
-             //hud.labelText = @"Cargando:";
-             //hud.detailsLabelText = @"Datos";
              dispatch_queue_t downloadQueue = dispatch_queue_create("loadData", NULL);
              dispatch_async(downloadQueue, ^{
                  
@@ -238,7 +226,6 @@
                      tabController.tabBar.userInteractionEnabled = NO;
                      
                      });
-                     //[MBProgressHUD hideHUDForView:self.view animated:YES];
                  }
                  else
                  {
@@ -249,8 +236,6 @@
                          [viewController.navigationItem setTitle:placemark.locality];
                          PFQueryTableViewController* queryViewController = (PFQueryTableViewController*)viewController;
                          [queryViewController loadObjects];
-                         
-                         //[MBProgressHUD hideHUDForView:self.view animated:YES];
                      });
                  }
              });
@@ -265,11 +250,8 @@
                                                 duration:TSMessageNotificationDurationEndless
                                     canBeDismissedByUser:NO];
              
-             //[MBProgressHUD hideHUDForView:self.view animated:YES];
              UITabBarController* tabController = (UITabBarController*)self.tabBarController;
              tabController.tabBar.userInteractionEnabled = NO;
-             
-             //[locationManager startUpdatingLocation];
          }
      }];
 }
@@ -280,7 +262,6 @@
     
     if (error == nil)
     {
-        //[[self locationManager] startMonitoringSignificantLocationChanges];
         self.mapView.showsUserLocation = YES;
         
         MKCoordinateRegion region;
@@ -371,10 +352,5 @@
         [[segue destinationViewController] setParentView:@"Cerca de Mi"];
     }
 }
-
-/*- (void)updateNearRestaurants
-{
-    [self loadObjects];
-}*/
 
 @end
