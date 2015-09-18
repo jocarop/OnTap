@@ -62,13 +62,13 @@
     CLLocationDegrees lonDelta = location.coordinate.longitude - annotation.coordinate.longitude;
     
     MKCoordinateSpan span;
-    if (fabsf(latDelta) > fabsf(lonDelta))
+    if (fabs(latDelta) > fabs(lonDelta))
     {
-        span = MKCoordinateSpanMake(fabsf(latDelta*2),0.0);
+        span = MKCoordinateSpanMake(fabs(latDelta*2),0.0);
     }
     else
     {
-        span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*2));
+        span = MKCoordinateSpanMake(0.0,fabs(lonDelta*2));
     }
     
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(location.coordinate.latitude-latDelta/2, location.coordinate.longitude-lonDelta/2);

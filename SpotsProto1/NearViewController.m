@@ -61,7 +61,7 @@
 }
 
 - (void)viewDidLoad
-{
+{   
     [super viewDidLoad];
     
     UIColor* barColor = [UIColor colorWithRed:255.0/255.0 green:144.0/255.0 blue:66.0/255.0 alpha:0.9f];
@@ -180,7 +180,7 @@
         CLLocationDegrees latDelta = api.location.coordinate.latitude - location.coordinate.latitude;
         CLLocationDegrees lonDelta = api.location.coordinate.longitude - location.coordinate.longitude;
     
-        if (fabsf(latDelta) < 0.225 && fabsf(lonDelta) < 0.225)
+        if (fabs(latDelta) < 0.225 && fabs(lonDelta) < 0.225)
         {
             api.location = location;
             [self loadObjects];
@@ -282,13 +282,13 @@
             CLLocationDegrees latDelta = location.coordinate.latitude - geoPoint.latitude;
             CLLocationDegrees lonDelta = location.coordinate.longitude - geoPoint.longitude;
         
-            if (fabsf(latDelta) > fabsf(lonDelta))
+            if (fabs(latDelta) > fabs(lonDelta))
             {
-                span = MKCoordinateSpanMake(fabsf(latDelta*2),0.0);
+                span = MKCoordinateSpanMake(fabs(latDelta*2),0.0);
             }
             else
             {
-                span = MKCoordinateSpanMake(0.0,fabsf(lonDelta*2));
+                span = MKCoordinateSpanMake(0.0,fabs(lonDelta*2));
             }
         
             center = CLLocationCoordinate2DMake(location.coordinate.latitude-latDelta/2, location.coordinate.longitude-lonDelta/2);
