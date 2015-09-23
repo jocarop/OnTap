@@ -319,10 +319,26 @@
     
     PFGeoPoint* geoPoint = [PFGeoPoint geoPointWithLocation:location];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
+    /*PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
     [query whereKey:@"ciudad" equalTo:ciudad];
     [query whereKey:@"geolocation" nearGeoPoint:geoPoint withinKilometers:2.0f];
-    query.cachePolicy = kPFCachePolicyNetworkOnly;
+    query.cachePolicy = kPFCachePolicyNetworkOnly;*/
+    
+    /*PFQuery* innerQuery = [PFQuery queryWithClassName:@"Restaurant"];
+    [innerQuery whereKey:@"ciudad" equalTo:ciudad];
+    
+    PFQuery* query = [PFQuery queryWithClassName:@"Sucursal"];
+    [query includeKey:@"restaurant"];
+    [query whereKey:@"restaurant" matchesQuery:innerQuery];
+    [query whereKey:@"geolocation" nearGeoPoint:geoPoint withinKilometers:2.0f];*/
+    
+    PFQuery* innerQuery = [PFQuery queryWithClassName:@"Sucursal"];
+    [innerQuery whereKey:@"geolocation" nearGeoPoint:geoPoint withinKilometers:2.0f];
+    
+    PFQuery* query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query includeKey:@"sucursales"];
+    [query whereKey:@"sucursales" matchesQuery:innerQuery];
+    [query whereKey:@"ciudad" equalTo:ciudad];
     
     return query;
 }

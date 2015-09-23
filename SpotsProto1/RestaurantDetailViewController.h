@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Restaurant.h"
+#import "iCarousel.h"
 
-@interface RestaurantDetailViewController : UITableViewController
+@interface RestaurantDetailViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
+@property (nonatomic, strong) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) PFObject* restaurantObj;
 @property (strong, nonatomic) NSString* parentView;
 

@@ -17,6 +17,7 @@
 
 + (RestaurantsAPI*)sharedInstance;
 - (BOOL)isCityInCatalogue:(NSString*)city;
+- (void)addSucursales;
 - (NSArray*)getFavoriteRestaurants;
 - (void)removeFavoriteRestaurant:(NSInteger)index;
 - (void)addFavoriteRestaurant:(PFObject*)restaurantObj;

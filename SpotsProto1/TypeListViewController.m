@@ -104,10 +104,11 @@
     if ([ciudad isEqual:@"Cupertino"])
         ciudad = @"Sunnyvale";
     
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
     if (self.objects.count == 0)
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
+    [query includeKey:@"sucursales"];
     [query whereKey:@"type" equalTo:_restaurantType];
     [query whereKey:@"ciudad" equalTo:ciudad];
     [query orderByAscending:@"nombre"];

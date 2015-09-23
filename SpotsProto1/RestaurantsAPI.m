@@ -34,7 +34,7 @@
 }
 
 - (BOOL)isCityInCatalogue:(NSString*)city
-{
+{    
     if ([city isEqual:@"Cupertino"])
         city = @"Sunnyvale";
     
@@ -46,6 +46,52 @@
         return YES;
     
     return NO;
+}
+
+- (void)addSucursales
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
+    [query whereKey:@"ciudad" containsString:@"Sunnyvale"];
+    NSArray* objects = [query findObjects];
+    
+    for (PFObject* object in objects)
+    {
+        PFObject* sucursal = [PFObject objectWithClassName:@"Sucursal"];
+        if (object[@"direccion"] != nil)
+        {
+            sucursal[@"direccion"] = object[@"direccion"];
+        }
+        if (object[@"geolocation"] != nil)
+        {
+            sucursal[@"geolocation"] = object[@"geolocation"];
+        }
+        if (object[@"telefono"] != nil)
+        {
+            sucursal[@"telefono"] = object[@"telefono"];
+        }
+        if (object[@"horario"] != nil)
+        {
+            sucursal[@"horario"] = object[@"horario"];
+        }
+        sucursal[@"restaurant"] = [PFObject objectWithoutDataWithClassName:@"Restaurant" objectId:object.objectId];
+        
+        [sucursal save];
+        
+        NSString* id = sucursal.objectId;
+        NSArray* array = [NSArray arrayWithObjects:sucursal, nil];
+        object[@"sucursales"] = array;
+                
+        [object save];
+    }
+    
+    /*PFObject* object = [query getFirstObject];
+    PFObject* s1 = [PFObject objectWithoutDataWithClassName:@"Sucursal" objectId:@"O0D7JrKX95"];
+    PFObject* s2 = [PFObject objectWithoutDataWithClassName:@"Sucursal" objectId:@"WR8G0SErio"];
+    
+    NSArray* array = [NSArray arrayWithObjects:s1, nil];
+    
+    object[@"sucursales"] = array;
+    [object save];*/
 }
 
 - (NSArray*)getFavoriteRestaurants

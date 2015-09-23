@@ -86,6 +86,7 @@
 		EF91516B1A00665D00E5250F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91516A1A00665D00E5250F /* Parse.framework */; };
 		EF91516D1A00666D00E5250F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91516C1A00666D00E5250F /* Bolts.framework */; };
 		EF9151701A0070F400E5250F /* RestaurantTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF91516F1A0070F400E5250F /* RestaurantTypeCell.m */; };
+		EF93C78E1BABB0DD00741788 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF93C78D1BABB0DD00741788 /* iCarousel.m */; };
 		EFBC57A31932BF8A007A9C80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC57A21932BF8A007A9C80 /* Foundation.framework */; };
 		EFBC57A51932BF8A007A9C80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC57A41932BF8A007A9C80 /* CoreGraphics.framework */; };
 		EFBC57A71932BF8A007A9C80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBC57A61932BF8A007A9C80 /* UIKit.framework */; };
@@ -216,6 +217,8 @@
 		EF91516C1A00666D00E5250F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		EF91516E1A0070F400E5250F /* RestaurantTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantTypeCell.h; sourceTree = "<group>"; };
 		EF91516F1A0070F400E5250F /* RestaurantTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantTypeCell.m; sourceTree = "<group>"; };
+		EF93C78C1BABB0DD00741788 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		EF93C78D1BABB0DD00741788 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		EFBC579F1932BF8A007A9C80 /* OnTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBC57A21932BF8A007A9C80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EFBC57A41932BF8A007A9C80 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -421,6 +424,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		EF93C78B1BABB0DD00741788 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				EF93C78C1BABB0DD00741788 /* iCarousel.h */,
+				EF93C78D1BABB0DD00741788 /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
 		EFBC57961932BF8A007A9C80 = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +444,7 @@
 				EF6E833B1983463E00EAB5D7 /* CasaMama.gpx */,
 				EF0FC9FE19B2AD6800FCBE8B /* Firenze.gpx */,
 				EFBC57A81932BF8A007A9C80 /* SpotsProto1 */,
+				EF93C78B1BABB0DD00741788 /* iCarousel */,
 				EF062D531967200C00E1EA0A /* TSMessages */,
 				EFF43EF019429D7800A62E4B /* Mixpanel */,
 				EFBC57CA1932BF8A007A9C80 /* SpotsProto1Tests */,
@@ -754,6 +767,7 @@
 				EF062D951967200D00E1EA0A /* TSMessageView.m in Sources */,
 				EF062D941967200D00E1EA0A /* TSBlurView.m in Sources */,
 				EF062D821967200D00E1EA0A /* TSMessage.m in Sources */,
+				EF93C78E1BABB0DD00741788 /* iCarousel.m in Sources */,
 				EF062D521967170A00E1EA0A /* MBProgressHUD.m in Sources */,
 				EF7B848A1966541300B33B1A /* FirstViewController.m in Sources */,
 				EF29BB071A099F5E001007A5 /* NearViewController.m in Sources */,
